@@ -1,4 +1,4 @@
-# conduit_password_hash
+# tridev_security_hash
 
 [![Build Status](https://travis-ci.org/stablekernel/dart-password-hash.svg?branch=master)](https://travis-ci.org/stablekernel/dart-password-hash)
 
@@ -11,5 +11,3 @@ var generator = PBKDF2();
 var salt = generateAsBase64String();
 var hash = generator.generateKey("mytopsecretpassword", salt, 1000, 32);
 ```
-
-
