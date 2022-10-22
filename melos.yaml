@@ -1,0 +1,33 @@
+name: Tridev
+repository: https://github.com/tridev/tridev
+packages:
+  - packages/**
+ignore:
+  - packages/tridev/templates/**
+  - packages/tmp/**
+  - packages/runtime_test_packages/**
+  - packages/isolate_exec_test_packages/**
+command:
+  version:
+    linkToCommits: true
+scripts:
+  test-unit:
+    run: . ci/.env && melos exec --ignore "*common*" --ignore "*application*" --ignore "*dependency*" -- "dart test -j1 -x cli test/*" #TODO: file a bug report with dart:mirrors
+    select-pacakge:
+      no-private: true
+  test-with-coverage:
+    run: . ci/.env && melos exec --ignore "*common*" --ignore "*application*" --ignore "*dependency*" -- "dart $MELOS_ROOT_PATH/utils/unused_port.dart | dart pub global run coverage:test_with_coverage --port -"
+    select-pacakge:
+      no-private: true
+  analyze: melos exec -- pub global run tuneup check
+  cache-source:
+    run: melos exec -- "dart pub global activate '\$MELOS_PACKAGE_NAME' && cp -r '\$MELOS_PACKAGE_PATH' '$PUB_CACHE/hosted/pub.dartlang.org/\$MELOS_PACKAGE_NAME-\$MELOS_PACKAGE_VERSION'"
+    select-pacakge:
+      no-private: true
+  strip-overrides:
+    run: melos exec -- "yq -i 'del(.dependency_overrides)' '\$MELOS_PACKAGE_PATH/pubspec.yaml'"
+    select-pacakge:
+      no-private: true
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  

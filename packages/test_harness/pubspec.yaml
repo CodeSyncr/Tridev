@@ -1,0 +1,15 @@
+name: tridev_test
+version: 3.2.2
+homepage: https://github.com/tridev-dart/tridev
+description: Utilities for writing automated tests for tridev applications
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+dependencies:
+  test: ^1.16.5
+  matcher: ">=0.12.3 <0.14.0"
+  tridev: 
+    path: ../tridev
+dev_dependencies:
+  tridev_common_test:
+    path: ../common_test
+  test_core: ^0.3.29
