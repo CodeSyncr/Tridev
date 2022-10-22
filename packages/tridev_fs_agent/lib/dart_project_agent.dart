@@ -56,9 +56,9 @@ class DartProjectAgent extends WorkingDirectoryAgent {
     name = pubspec.name!;
   }
 
-  /// Temporary directory where projects are stored ('/tmp/conduit')
+  /// Temporary directory where projects are stored ('/tmp/tridev')
   static Directory get projectsDirectory =>
-      Directory(join(Directory.systemTemp.path, 'conduit'));
+      Directory(join(Directory.systemTemp.path, 'tridev'));
 
   /// Name of this project
   late String name;
