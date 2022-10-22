@@ -17,4 +17,4 @@ Tridev is a fork of Stablekernel's Aqueduct, a modern Dart HTTP server framework
 
 ## Tutorials, Documentation and Examples
 
-Tridev is a close fork to Aqueduct, so Aqueduct examples can be tweaked to work with Tridev [here](https://github.com/stablekernel/aqueduct_examples). The major concern is updating the code to use null-safety.
+Tridev is a close fork to Aqueduct, so Aqueduct examples can be tweaked to work with Tridev [here](https://github.com/evilrat-technologies//aqueduct_examples). The major concern is updating the code to use null-safety.

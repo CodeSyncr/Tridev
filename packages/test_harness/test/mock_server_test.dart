@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:isolate';
 
-import 'package:conduit/conduit.dart';
-import 'package:conduit_test/tridev_test.dart';
 import 'package:test/test.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev_test/tridev_test.dart';
 
 void main() {
   group("Mock HTTP Tests", () {

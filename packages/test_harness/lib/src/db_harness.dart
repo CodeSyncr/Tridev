@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:test/test.dart';
 import 'package:tridev/tridev.dart';
 import 'package:tridev_test/tridev_test.dart';
-import 'package:test/test.dart';
 
 /// Use methods from this class to test applications that use the tridev ORM.
 ///

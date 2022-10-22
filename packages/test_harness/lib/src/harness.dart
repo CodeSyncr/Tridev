@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:test/test.dart';
 import 'package:tridev/tridev.dart';
 import 'package:tridev_test/tridev_test.dart';
-import 'package:test/test.dart';
 
 /// Manages application lifecycle for the purpose of testing the application.
 ///

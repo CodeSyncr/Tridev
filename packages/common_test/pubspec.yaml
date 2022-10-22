@@ -6,6 +6,5 @@ publish_to: none
 environment:
   sdk: ">=2.12.0 <3.0.0"
 dependencies:
-  tridev: 
-    path: ../tridev
+  tridev: ^1.0.0
   tridev_common: ^1.0.0

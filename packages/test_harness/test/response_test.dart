@@ -1,9 +1,9 @@
-import 'package:conduit/conduit.dart';
-import 'package:conduit_test/tridev_test.dart';
-import 'package:conduit_test/src/body_matcher.dart';
-import 'package:conduit_test/src/response_matcher.dart';
 import 'package:test/test.dart';
 import 'package:test_core/src/util/io.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev_test/src/body_matcher.dart';
+import 'package:tridev_test/src/response_matcher.dart';
+import 'package:tridev_test/tridev_test.dart';
 
 void main() async {
   late MockHTTPServer server;
