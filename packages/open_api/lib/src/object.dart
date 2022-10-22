@@ -1,5 +1,5 @@
-import 'package:tridev_codeunit/tridev_codeunit.dart';
 import 'package:meta/meta.dart';
+import 'package:tridev_codeunit/tridev_codeunit.dart';
 
 class APIObject extends Coding {
   Map<String, dynamic> extensions = {};
