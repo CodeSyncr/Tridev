@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_catching_errors
 import 'dart:mirrors';
 
-import 'package:conduit_runtime/src/exceptions.dart';
+import 'package:tridev_runtime/src/exceptions.dart';
 
 dynamic runtimeCast(dynamic object, TypeMirror intoType) {
   final exceptionToThrow =

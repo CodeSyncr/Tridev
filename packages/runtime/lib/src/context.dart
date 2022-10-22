@@ -1,4 +1,4 @@
-import 'package:conduit_runtime/src/mirror_context.dart' as context;
+import 'package:tridev_runtime/src/mirror_context.dart' as context;
 
 /// Contextual values used during runtime.
 abstract class RuntimeContext {

@@ -5,9 +5,9 @@ import 'package:path/path.dart';
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:package_config/package_config.dart';
 import 'package:pubspec/pubspec.dart';
-import 'package:conduit_runtime/src/analyzer.dart';
-import 'package:conduit_runtime/src/context.dart';
-import 'package:conduit_runtime/src/mirror_context.dart';
+import 'package:tridev_runtime/src/analyzer.dart';
+import 'package:tridev_runtime/src/context.dart';
+import 'package:tridev_runtime/src/mirror_context.dart';
 import 'package:yaml/yaml.dart';
 
 /// Configuration and context values used during [Build.execute].

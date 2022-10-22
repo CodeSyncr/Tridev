@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:conduit_runtime/src/analyzer.dart';
+import 'package:tridev_runtime/src/analyzer.dart';
 import 'package:test/test.dart';
-import 'package:fs_test_agent/dart_project_agent.dart';
+import 'package:tridev_fs_agent/dart_project_agent.dart';
 
 void main() {
   test("ProjectAnalyzer can find a specific class declaration in project",

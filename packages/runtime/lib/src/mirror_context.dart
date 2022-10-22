@@ -1,8 +1,8 @@
 import 'dart:mirrors';
 
-import 'package:conduit_runtime/src/context.dart';
-import 'package:conduit_runtime/src/compiler.dart';
-import 'package:conduit_runtime/src/mirror_coerce.dart';
+import 'package:tridev_runtime/src/context.dart';
+import 'package:tridev_runtime/src/compiler.dart';
+import 'package:tridev_runtime/src/mirror_coerce.dart';
 
 RuntimeContext instance = MirrorContext._();
 

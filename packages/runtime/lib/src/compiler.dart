@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 abstract class Compiler {
   /// Modifies a package on the filesystem in order to remove dart:mirrors from the package.

@@ -1,7 +1,7 @@
 library runtime;
 
 import 'dart:io';
-import 'package:conduit_runtime/src/mirror_context.dart';
+import 'package:tridev_runtime/src/mirror_context.dart';
 import 'src/compiler.dart';
 
 export 'src/analyzer.dart';
@@ -36,7 +36,7 @@ class RuntimePackageCompiler extends Compiler {
         .resolve("src/")
         .resolve("context.dart"));
     final contextFileContents = contextFile.readAsStringSync().replaceFirst(
-        "import 'package:conduit_runtime/src/mirror_context.dart' as context;",
+        "import 'package:tridev_runtime/src/mirror_context.dart' as context;",
         "import 'package:generated_runtime/generated_runtime.dart' as context;");
     contextFile.writeAsStringSync(contextFileContents);
 

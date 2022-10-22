@@ -4,10 +4,10 @@ import 'dart:io';
 import 'dart:mirrors';
 
 import 'package:package_config/package_config.dart';
-import 'package:conduit_runtime/src/build_context.dart';
-import 'package:conduit_runtime/src/compiler.dart';
-import 'package:conduit_runtime/src/file_system.dart';
-import 'package:conduit_runtime/src/generator.dart';
+import 'package:tridev_runtime/src/build_context.dart';
+import 'package:tridev_runtime/src/compiler.dart';
+import 'package:tridev_runtime/src/file_system.dart';
+import 'package:tridev_runtime/src/generator.dart';
 
 class Build {
   Build(this.context);
@@ -91,7 +91,7 @@ class Build {
         pubspecMap['dev_dependencies'] = devDeps;
       }
 
-      overrides['conduit'] = {
+      overrides['tridev'] = {
         'path': appDst.toFilePath(windows: Platform.isWindows)
       };
     }

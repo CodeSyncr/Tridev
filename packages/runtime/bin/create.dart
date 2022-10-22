@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 Future main(List<String> args) async {
   final parser = ArgParser();

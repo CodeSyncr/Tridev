@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:mirrors';
 
-import 'package:conduit_runtime/runtime.dart';
-import 'package:conduit_runtime/slow_coerce.dart';
+import 'package:tridev_runtime/runtime.dart';
+import 'package:tridev_runtime/slow_coerce.dart';
 import 'package:test/test.dart';
 
 void main() {

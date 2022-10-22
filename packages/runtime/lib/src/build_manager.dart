@@ -4,8 +4,8 @@ import 'dart:io';
 import 'package:analyzer/dart/analysis/results.dart';
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:package_config/package_config.dart';
-import 'package:conduit_isolate_exec/conduit_isolate_exec.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_isolate_exec/tridev_isolate_exec.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class BuildExecutable extends Executable<Null> {
   BuildExecutable(Map<String, dynamic> message) : super(message) {
@@ -59,7 +59,7 @@ class BuildManager {
       packageConfigURI:
           sourceDirectoryUri.resolve('.dart_tool/package_config.json'),
       imports: [
-        "package:conduit_runtime/runtime.dart",
+        "package:tridev_runtime/runtime.dart",
         context.targetScriptFileUri.toString()
       ],
       logHandler: (s) => print(s), //ignore: avoid_print
