@@ -1,5 +1,5 @@
 name: tridev_config
-version: 1.0.0
+version: 1.0.1
 description: A safe and convenient way to read YAML configuration files.
 repository: https://github.com/tridev-dart/tridev-config.git
 environment: 

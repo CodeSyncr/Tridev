@@ -1,10 +1,10 @@
-# conduit_config
+# tridev_config
 
 A library to add type and name safety to YAML configuration files.
 
 ## Basic Usage
 
-conduit_config is simple - it maps YAML files to Dart objects using the keys as property names.
+tridev_config is simple - it maps YAML files to Dart objects using the keys as property names.
 This mapping ensures that the types of your YAML values are checked at runtime and that
 you haven't typo'ed any YAML key names.
 
@@ -42,6 +42,7 @@ If serverHeader is not a String or missing, you will get an exception.
 ## Useful Usage
 
 You may mark properties in `Configuration`s as optional.
+
 ```
 class ApplicationConfiguration extends Configuration {
     ApplicationConfiguration(String fileName) :
@@ -73,6 +74,7 @@ class ApplicationConfiguration extends Configuration {
 ```
 
 For which the YAML may be:
+
 ```
 port: 8000
 userDatabase:
@@ -82,6 +84,7 @@ userDatabase:
 ```
 
 You may also use arrays and maps, for which the values can be primitive types or `Configuration` subclasses.
+
 ```
 class ApplicationConfiguration extends Configuration {
     ApplicationConfiguration(String fileName) :
@@ -92,6 +95,7 @@ class ApplicationConfiguration extends Configuration {
 ```
 
 The YAML here may be:
+
 ```
 databases:
   db1:
@@ -159,4 +163,4 @@ See the tests for more examples.
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com/conduit/conduit_config/issues
+[tracker]: https://github.com/tridev/tridev_config/issues
