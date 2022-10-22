@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:mirrors';
 
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 import '../dependency.dart';
 

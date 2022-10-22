@@ -1,8 +1,8 @@
 import 'dart:mirrors';
 
-import 'package:conduit_config/src/configuration.dart';
-import 'package:conduit_config/src/mirror_property.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_config/src/configuration.dart';
+import 'package:tridev_config/src/mirror_property.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class ConfigurationRuntimeImpl extends ConfigurationRuntime
     implements SourceCompiler {
@@ -168,7 +168,7 @@ class ConfigurationRuntimeImpl extends ConfigurationRuntime
       uri: type.originalDeclaration.location!.sourceUri,
       alsoImportOriginalFile: true,
     )
-      ..add("import 'package:conduit_config/src/intermediate_exception.dart';");
+      ..add("import 'package:tridev_config/src/intermediate_exception.dart';");
     return """
     ${directives.join("\n")}
     final instance = ConfigurationRuntimeImpl();

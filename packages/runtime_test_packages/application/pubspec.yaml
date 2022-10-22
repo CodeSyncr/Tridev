@@ -16,5 +16,5 @@ dev_dependencies:
   test: ^1.16.5
 
 dependency_overrides:
-  conduit_isolate_exec:
+  tridev_isolate_exec:
     path: ../../isolate_exec  

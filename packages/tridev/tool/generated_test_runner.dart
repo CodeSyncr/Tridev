@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 Future main(List<String> args) async {
-  final conduitDir = Directory.current.uri;
+  final tridevDir = Directory.current.uri;
   final blacklist = [
     (String s) => s.contains('test/command/'),
     (String s) => s.contains('/compilation_errors/'),
@@ -24,8 +24,8 @@ Future main(List<String> args) async {
     testFiles = [File(args.first)];
   } else {
     final testDir = args.isNotEmpty
-        ? conduitDir.resolveUri(Uri.parse(args[0]))
-        : conduitDir.resolve('test/');
+        ? tridevDir.resolveUri(Uri.parse(args[0]))
+        : tridevDir.resolve('test/');
 
     testFiles = Directory.fromUri(testDir)
         .listSync(recursive: true)
@@ -45,10 +45,10 @@ Future main(List<String> args) async {
 
     print('Running tests derived from ${f.path}...');
     final ctx = BuildContext(
-        conduitDir.resolve('lib/').resolve('conduit.dart'),
+        tridevDir.resolve('lib/').resolve('tridev.dart'),
         Directory.current.uri.resolve('../').resolve('_build/'),
         Directory.current.uri.resolve('../').resolve('run'),
-        File(conduitDir.resolve(f.path).path).readAsStringSync(),
+        File(tridevDir.resolve(f.path).path).readAsStringSync(),
         forTests: true);
     final bm = BuildManager(ctx);
     await bm.build();
@@ -57,7 +57,7 @@ Future main(List<String> args) async {
         workingDirectory:
             ctx.buildDirectoryUri.toFilePath(windows: Platform.isWindows),
         environment: {
-          'CONDUIT_CI_DIR_LOCATION': Directory.current.uri
+          'TRIDEV_CI_DIR_LOCATION': Directory.current.uri
               .resolve('../../')
               .resolve('ci/')
               .toFilePath(windows: Platform.isWindows)
@@ -87,7 +87,7 @@ Future main(List<String> args) async {
   print('==============');
 
   final testRoot =
-      Directory.current.uri.resolve('../').resolve('conduit/').resolve('test/');
+      Directory.current.uri.resolve('../').resolve('tridev/').resolve('test/');
   String stripParentDir(Uri uri) {
     final testPathList = uri.pathSegments;
     final parentDirPathList = testRoot.pathSegments;

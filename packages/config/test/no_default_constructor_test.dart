@@ -1,6 +1,6 @@
 //ignore_for_file: avoid_catching_errors
-import 'package:conduit_config/conduit_config.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_config/tridev_config.dart';
+import 'package:tridev_runtime/runtime.dart';
 import 'package:test/test.dart';
 
 void main() {

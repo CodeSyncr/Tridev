@@ -1,4 +1,4 @@
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class Consumer {
   String get message =>

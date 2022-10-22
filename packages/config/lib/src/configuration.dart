@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:conduit_config/src/intermediate_exception.dart';
-import 'package:conduit_runtime/runtime.dart';
 import 'package:meta/meta.dart';
+import 'package:tridev_config/src/intermediate_exception.dart';
+import 'package:tridev_runtime/runtime.dart';
 import 'package:yaml/yaml.dart';
 
 /// Subclasses of [Configuration] read YAML strings and files, assigning values from the YAML document to properties

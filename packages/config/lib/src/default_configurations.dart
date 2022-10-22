@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:conduit_config/src/configuration.dart';
+import 'package:tridev_config/src/configuration.dart';
 
 /// A [Configuration] to represent a database connection configuration.
 class DatabaseConfiguration extends Configuration {

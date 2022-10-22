@@ -1,4 +1,4 @@
-import 'package:conduit_config/conduit_config.dart';
+import 'package:tridev_config/tridev_config.dart';
 import 'package:test/test.dart';
 
 void main() {

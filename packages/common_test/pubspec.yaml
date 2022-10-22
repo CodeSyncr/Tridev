@@ -1,10 +1,10 @@
-name: conduit_common_test
-version: 3.1.0
-homepage: https://github.com/conduit-dart/common-test
-description: A collection of classes and function used for testing conduit and by the conduit test harness.
+name: tridev_common_test
+version: 1.0.0
+homepage: https://github.com/tridev-dart/common-test
+description: A collection of classes and function used for testing tridev and by the tridev test harness.
 publish_to: none
 environment:
   sdk: ">=2.12.0 <3.0.0"
 dependencies:
-  conduit: ^3.2.3
-  conduit_common: ^3.2.2
+  tridev: ^1.0.0
+  tridev_common: ^1.0.0

@@ -1,6 +1,6 @@
 name: tridev
 version: 3.2.3
-homepage: https://github.com/conduit-dart/conduit
+homepage: https://github.com/tridev-dart/tridev
 description: A modern HTTP server application framework, ORM and OAuth2 provider with OpenAPI 3.0 integration. Foundation for REST, RPC or GraphQL services.
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -12,7 +12,7 @@ dependencies:
   tridev_config: ^1.0.0
   tridev_isolate_exec: ^1.0.0
   tridev_open_api: ^1.0.0
-  tridev_password_hash: ^1.0.0
+  tridev_security_hash: ^1.0.0
   tridev_runtime: ^1.0.0
   crypto: ^3.0.0
   logging: ^1.0.0
@@ -28,10 +28,10 @@ dev_dependencies:
   mockito: ^5.0.0
   pedantic: ^1.0.0
   test: ^1.16.5
-  fs_test_agent:
-    path: ../fs_test_agent
-  tridev_common_test:
-    path: ../common_test
+  tridev_fs_agent:
+    path: ../tridev_fs_agent
+  # tridev_common_test:
+  #   path: ../common_test
   tridev_test:
     path: ../test_harness
   web_socket_channel: ^2.2.0

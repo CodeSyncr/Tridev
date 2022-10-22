@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'dart:mirrors';
 
-import 'package:conduit_config/src/configuration.dart';
-import 'package:conduit_config/src/runtime.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_config/src/configuration.dart';
+import 'package:tridev_config/src/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class ConfigurationCompiler extends Compiler {
   @override
@@ -21,7 +21,7 @@ class ConfigurationCompiler extends Compiler {
   @override
   void deflectPackage(Directory destinationDirectory) {
     final libFile = File.fromUri(
-      destinationDirectory.uri.resolve("lib/").resolve("conduit_config.dart"),
+      destinationDirectory.uri.resolve("lib/").resolve("tridev_config.dart"),
     );
     final contents = libFile.readAsStringSync();
     libFile.writeAsStringSync(

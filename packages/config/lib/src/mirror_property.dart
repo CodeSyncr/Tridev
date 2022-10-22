@@ -1,7 +1,7 @@
 import 'dart:mirrors';
 
-import 'package:conduit_config/src/configuration.dart';
-import 'package:conduit_config/src/intermediate_exception.dart';
+import 'package:tridev_config/src/configuration.dart';
+import 'package:tridev_config/src/intermediate_exception.dart';
 
 class MirrorTypeCodec {
   MirrorTypeCodec(this.type) {

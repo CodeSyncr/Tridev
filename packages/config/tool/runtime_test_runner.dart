@@ -2,7 +2,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 Future main(List<String> args) async {
   final blacklist = ["no_default_constructor_test.dart"];
@@ -32,7 +32,7 @@ Test Files:
     prompt();
     print("Loading test ${f.path}...");
     final ctx = BuildContext(
-      Directory.current.uri.resolve("lib/").resolve("conduit_config.dart"),
+      Directory.current.uri.resolve("lib/").resolve("tridev_config.dart"),
       Directory.current.uri.resolve("build/"),
       Directory.current.uri.resolve("run"),
       f.readAsStringSync(),
