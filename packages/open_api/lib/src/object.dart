@@ -1,4 +1,4 @@
-import 'package:tridev_codable/tridev_codable.dart';
+import 'package:tridev_codeunit/tridev_codeunit.dart';
 import 'package:meta/meta.dart';
 
 class APIObject extends Coding {

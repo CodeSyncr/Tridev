@@ -1,13 +1,13 @@
-import 'package:conduit_codable/conduit_codable.dart';
-import 'package:conduit_open_api/src/object.dart';
-import 'package:conduit_open_api/src/util/map_helper.dart';
-import 'package:conduit_open_api/src/v3/callback.dart';
-import 'package:conduit_open_api/src/v3/header.dart';
-import 'package:conduit_open_api/src/v3/parameter.dart';
-import 'package:conduit_open_api/src/v3/request_body.dart';
-import 'package:conduit_open_api/src/v3/response.dart';
-import 'package:conduit_open_api/src/v3/schema.dart';
-import 'package:conduit_open_api/src/v3/security.dart';
+import 'package:tridev_codeunit/tridev_codeunit.dart';
+import 'package:tridev_open_api/src/object.dart';
+import 'package:tridev_open_api/src/util/map_helper.dart';
+import 'package:tridev_open_api/src/v3/callback.dart';
+import 'package:tridev_open_api/src/v3/header.dart';
+import 'package:tridev_open_api/src/v3/parameter.dart';
+import 'package:tridev_open_api/src/v3/request_body.dart';
+import 'package:tridev_open_api/src/v3/response.dart';
+import 'package:tridev_open_api/src/v3/schema.dart';
+import 'package:tridev_open_api/src/v3/security.dart';
 
 /// Holds a set of reusable objects for different aspects of the OAS.
 ///

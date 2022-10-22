@@ -1,10 +1,10 @@
-import 'package:conduit_codable/conduit_codable.dart';
-import 'package:conduit_open_api/src/object.dart';
-import 'package:conduit_open_api/src/v3/components.dart';
-import 'package:conduit_open_api/src/v3/metadata.dart';
-import 'package:conduit_open_api/src/v3/path.dart';
-import 'package:conduit_open_api/src/v3/security.dart';
-import 'package:conduit_open_api/src/v3/server.dart';
+import 'package:tridev_codeunit/tridev_codeunit.dart';
+import 'package:tridev_open_api/src/object.dart';
+import 'package:tridev_open_api/src/v3/components.dart';
+import 'package:tridev_open_api/src/v3/metadata.dart';
+import 'package:tridev_open_api/src/v3/path.dart';
+import 'package:tridev_open_api/src/v3/security.dart';
+import 'package:tridev_open_api/src/v3/server.dart';
 
 /// This is the root document object of the OpenAPI document.
 class APIDocument extends APIObject {

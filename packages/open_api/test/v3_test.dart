@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:conduit_open_api/v3.dart';
+import 'package:tridev_open_api/v3.dart';
 import 'package:test/test.dart';
 
 void main() {

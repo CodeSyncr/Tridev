@@ -2,11 +2,11 @@ name: tridev_open_api
 version: 1.0.0
 homepage: https://github.com/tridev/open-api-dart
 description: Data structures for OpenAPI (Swagger) specification. Reads and writes JSON specifications.
-environment:
+environment: 
   sdk: '>=2.12.0 <3.0.0'
-dependencies:
-  tridev_codable: ^1.0.0
+dependencies: 
+  tridev_codeunit: ^1.0.0
   meta: ^1.1.5
-dev_dependencies:
+dev_dependencies: 
   lint: ^1.5.3
   test: ^1.3.0

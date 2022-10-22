@@ -1,13 +1,13 @@
-import 'package:conduit_codable/cast.dart' as cast;
-import 'package:conduit_codable/conduit_codable.dart';
-import 'package:conduit_open_api/src/object.dart';
-import 'package:conduit_open_api/src/util/list_helper.dart';
-import 'package:conduit_open_api/src/v2/metadata.dart';
-import 'package:conduit_open_api/src/v2/parameter.dart';
-import 'package:conduit_open_api/src/v2/path.dart';
-import 'package:conduit_open_api/src/v2/response.dart';
-import 'package:conduit_open_api/src/v2/schema.dart';
-import 'package:conduit_open_api/src/v2/security.dart';
+import 'package:tridev_codeunit/cast.dart' as cast;
+import 'package:tridev_codeunit/tridev_codeunit.dart';
+import 'package:tridev_open_api/src/object.dart';
+import 'package:tridev_open_api/src/util/list_helper.dart';
+import 'package:tridev_open_api/src/v2/metadata.dart';
+import 'package:tridev_open_api/src/v2/parameter.dart';
+import 'package:tridev_open_api/src/v2/path.dart';
+import 'package:tridev_open_api/src/v2/response.dart';
+import 'package:tridev_open_api/src/v2/schema.dart';
+import 'package:tridev_open_api/src/v2/security.dart';
 
 /// Represents an OpenAPI 2.0 specification.
 class APIDocument extends APIObject {

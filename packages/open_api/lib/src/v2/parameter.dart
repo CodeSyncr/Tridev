@@ -1,7 +1,7 @@
-import 'package:conduit_codable/conduit_codable.dart';
-import 'package:conduit_open_api/src/v2/property.dart';
-import 'package:conduit_open_api/src/v2/schema.dart';
-import 'package:conduit_open_api/src/v2/types.dart';
+import 'package:tridev_codeunit/tridev_codeunit.dart';
+import 'package:tridev_open_api/src/v2/property.dart';
+import 'package:tridev_open_api/src/v2/schema.dart';
+import 'package:tridev_open_api/src/v2/types.dart';
 
 /// Represents a parameter location in the OpenAPI specification.
 enum APIParameterLocation { query, header, path, formData, body }
