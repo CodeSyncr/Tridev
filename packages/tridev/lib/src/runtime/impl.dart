@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'dart:mirrors';
 
-import 'package:conduit/src/application/application.dart';
-import 'package:conduit/src/application/channel.dart';
-import 'package:conduit/src/application/isolate_application_server.dart';
-import 'package:conduit/src/application/options.dart';
-import 'package:conduit/src/http/controller.dart';
-import 'package:conduit/src/http/resource_controller.dart';
-import 'package:conduit/src/http/resource_controller_interfaces.dart';
-import 'package:conduit/src/http/serializable.dart';
-import 'package:conduit/src/runtime/resource_controller_impl.dart';
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_open_api/v3.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev/src/application/application.dart';
+import 'package:tridev/src/application/channel.dart';
+import 'package:tridev/src/application/isolate_application_server.dart';
+import 'package:tridev/src/application/options.dart';
+import 'package:tridev/src/http/controller.dart';
+import 'package:tridev/src/http/resource_controller.dart';
+import 'package:tridev/src/http/resource_controller_interfaces.dart';
+import 'package:tridev/src/http/serializable.dart';
+import 'package:tridev/src/runtime/resource_controller_impl.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_open_api/v3.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class ChannelRuntimeImpl extends ChannelRuntime implements SourceCompiler {
   ChannelRuntimeImpl(this.type);
@@ -75,9 +75,9 @@ class ChannelRuntimeImpl extends ChannelRuntime implements SourceCompiler {
 
     return """
 import 'dart:async';    
-import 'package:conduit/conduit.dart';
-import 'package:conduit/src/application/isolate_application_server.dart';
-import 'package:conduit_common/conduit_common.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/src/application/isolate_application_server.dart';
+import 'package:tridev_common/tridev_common.dart';
 
 import '$originalFileUri';
 
@@ -176,7 +176,7 @@ class ControllerRuntimeImpl extends ControllerRuntime
 
     return """
 import 'dart:async';    
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import '$originalFileUri';
 ${(resourceController as ResourceControllerRuntimeImpl?)?.directives.join("\n") ?? ""}
     

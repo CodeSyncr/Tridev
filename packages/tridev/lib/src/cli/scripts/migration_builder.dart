@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:conduit/conduit.dart';
-import 'package:conduit/src/cli/command.dart';
-import 'package:conduit/src/cli/mixins/project.dart';
-import 'package:conduit_isolate_exec/conduit_isolate_exec.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/src/cli/command.dart';
+import 'package:tridev/src/cli/mixins/project.dart';
+import 'package:tridev_isolate_exec/tridev_isolate_exec.dart';
 
 class MigrationBuilderExecutable extends Executable<Map<String, dynamic>> {
   MigrationBuilderExecutable(Map<String, dynamic> message)
@@ -41,9 +41,9 @@ class MigrationBuilderExecutable extends Executable<Map<String, dynamic>> {
   }
 
   static List<String> importsForPackage(String? packageName) => [
-        "package:conduit/conduit.dart",
+        "package:tridev/tridev.dart",
         "package:$packageName/$packageName.dart",
-        "package:conduit_runtime/runtime.dart"
+        "package:tridev_runtime/runtime.dart"
       ];
 }
 

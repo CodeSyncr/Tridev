@@ -3,9 +3,9 @@ import 'dart:io';
 
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:tridev/src/auth/auth.dart';
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_open_api/v3.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_open_api/v3.dart';
+import 'package:tridev_runtime/runtime.dart';
 import 'package:logging/logging.dart';
 import 'package:meta/meta.dart';
 
@@ -62,7 +62,7 @@ import 'http.dart';
 ///           }
 ///         }
 ///
-/// Bindings will automatically parse values into other types and validate that requests have the desired values. See [Bind] for all possible bindings and https://conduit.io/docs/http/resource_controller/ for more details.
+/// Bindings will automatically parse values into other types and validate that requests have the desired values. See [Bind] for all possible bindings and https://tridev.io/docs/http/resource_controller/ for more details.
 ///
 /// To access the request directly, use [request]. Note that the [Request.body] of [request] will be decoded prior to invoking an operation method.
 abstract class ResourceController extends Controller
@@ -264,7 +264,7 @@ abstract class ResourceController extends Controller
     if (operation.scopes != null) {
       if (request!.authorization == null) {
         // todo: this should be done compile-time
-        Logger("conduit").warning(
+        Logger("tridev").warning(
             "'${runtimeType}' must be linked to channel that contains an 'Authorizer', because "
             "it uses 'Scope' annotation for one or more of its operation methods.");
         throw Response.serverError();

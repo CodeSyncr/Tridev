@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:tridev/src/auth/auth.dart';
 import 'package:tridev/src/http/http.dart';
-import 'package:conduit_common/conduit_common.dart';
+import 'package:tridev_common/tridev_common.dart';
 
-import 'package:conduit_open_api/v3.dart';
+import 'package:tridev_open_api/v3.dart';
 
 abstract class ResourceControllerRuntime {
   List<ResourceControllerParameter>? ivarParameters;

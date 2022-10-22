@@ -1,7 +1,7 @@
 // ignore: unnecessary_const
 @Tags(["cli"])
-import 'package:fs_test_agent/dart_project_agent.dart';
-import 'package:fs_test_agent/working_directory_agent.dart';
+import 'package:tridev_fs_agent/dart_project_agent.dart';
+import 'package:tridev_fs_agent/working_directory_agent.dart';
 import 'package:test/test.dart';
 
 import '../not_tests/cli_helpers.dart';
@@ -17,7 +17,7 @@ void main() {
     ).createTestProject();
     await cli.agent.getDependencies(offline: true);
     cli.agent.addOrReplaceFile("lib/application_test.dart", """
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 
 class TestObject extends ManagedObject<_TestObject> {}
 

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:conduit_config/conduit_config.dart';
+import 'package:tridev_config/tridev_config.dart';
 import 'package:http/http.dart' as http;
 import 'package:yaml/yaml.dart';
 
@@ -39,7 +39,7 @@ class Runner {
   bool? get docsOnly => options["docs-only"] as bool?;
   String? get name => options["name"] as String?;
   Uri baseReferenceURL =
-      Uri.parse("https://www.dartdocs.org/documentation/conduit/latest/");
+      Uri.parse("https://www.dartdocs.org/documentation/tridev/latest/");
 
   Future cleanup() async {
     return Future.forEach(_cleanup, (dynamic f) => f());
@@ -175,7 +175,7 @@ class Runner {
       "clone",
       "-b",
       branchName,
-      "git@github.com:stablekernel/conduit.git",
+      "git@github.com:stablekernel/tridev.git",
       dir.path
     ]);
     // ignore: unawaited_futures
@@ -195,7 +195,7 @@ class Runner {
     print("Getting latest version...");
     var response = await http.get(
       Uri.parse(
-        "https://api.github.com/repos/stablekernel/conduit/releases/latest",
+        "https://api.github.com/repos/stablekernel/tridev/releases/latest",
       ),
       headers: {"Authorization": "Bearer ${configuration.githubToken}"},
     );
@@ -259,7 +259,7 @@ class Runner {
 
     if (!isDryRun!) {
       var response = await http.post(
-        Uri.parse("https://api.github.com/repos/stablekernel/conduit/releases"),
+        Uri.parse("https://api.github.com/repos/stablekernel/tridev/releases"),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer ${configuration.githubToken}"

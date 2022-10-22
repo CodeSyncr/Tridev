@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 

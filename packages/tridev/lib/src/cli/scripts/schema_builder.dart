@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:conduit/src/cli/migration_source.dart';
-import 'package:conduit/src/db/postgresql/postgresql_persistent_store.dart';
-import 'package:conduit/src/db/schema/schema.dart';
-import 'package:conduit_isolate_exec/conduit_isolate_exec.dart';
+import 'package:tridev/src/cli/migration_source.dart';
+import 'package:tridev/src/db/postgresql/postgresql_persistent_store.dart';
+import 'package:tridev/src/db/schema/schema.dart';
+import 'package:tridev_isolate_exec/tridev_isolate_exec.dart';
 import 'package:logging/logging.dart';
 
 class SchemaBuilderExecutable extends Executable<Map<String, dynamic>> {
@@ -52,8 +52,8 @@ class SchemaBuilderExecutable extends Executable<Map<String, dynamic>> {
   }
 
   static List<String> get imports => [
-        "package:conduit/conduit.dart",
-        "package:conduit/src/cli/migration_source.dart",
-        "package:conduit_runtime/runtime.dart"
+        "package:tridev/tridev.dart",
+        "package:tridev/src/cli/migration_source.dart",
+        "package:tridev_runtime/runtime.dart"
       ];
 }

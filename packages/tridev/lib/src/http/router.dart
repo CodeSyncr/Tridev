@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_open_api/v3.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_open_api/v3.dart';
 
 import 'http.dart';
 import 'route_node.dart';
@@ -48,7 +48,7 @@ class Router extends Controller {
   /// Routers allow for multiple linked controllers. A request that matches [pattern]
   /// will be sent to the controller linked to this method's return value.
   ///
-  /// The [pattern] must follow the rules of route patterns (see also http://conduit.io/docs/http/routing/).
+  /// The [pattern] must follow the rules of route patterns (see also http://blackant.io/tridev/docs/http/routing/).
   ///
   /// A pattern consists of one or more path segments, e.g. "/path" or "/path/to".
   ///

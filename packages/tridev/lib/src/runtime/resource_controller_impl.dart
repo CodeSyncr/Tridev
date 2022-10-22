@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:mirrors';
 
-import 'package:conduit_runtime/runtime.dart' hide firstMetadataOfType;
 import 'package:tridev/src/http/request_body.dart';
 import 'package:tridev/src/http/resource_controller.dart';
 import 'package:tridev/src/http/resource_controller_bindings.dart';
@@ -12,6 +11,7 @@ import 'package:tridev/src/runtime/resource_controller/documenter.dart';
 import 'package:tridev/src/runtime/resource_controller/utility.dart';
 import 'package:tridev/src/runtime/resource_controller_generator.dart';
 import 'package:tridev/src/utilities/mirror_helpers.dart';
+import 'package:tridev_runtime/runtime.dart' hide firstMetadataOfType;
 
 class ResourceControllerRuntimeImpl extends ResourceControllerRuntime {
   ResourceControllerRuntimeImpl(this.type) {

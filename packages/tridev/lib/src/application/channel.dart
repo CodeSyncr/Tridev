@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_open_api/v3.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_open_api/v3.dart';
+import 'package:tridev_runtime/runtime.dart';
 import 'package:logging/logging.dart';
 import 'package:meta/meta.dart';
 
@@ -55,8 +55,8 @@ abstract class ApplicationChannel implements APIComponentDocumenter {
 
   /// The logger that this object will write messages to.
   ///
-  /// This logger's name appears as 'conduit'.
-  Logger get logger => Logger("conduit");
+  /// This logger's name appears as 'tridev'.
+  Logger get logger => Logger("tridev");
 
   /// The [ApplicationServer] that sends HTTP requests to this object.
   ApplicationServer get server => _server;
@@ -217,7 +217,7 @@ abstract class ApplicationChannel implements APIComponentDocumenter {
 ///           }
 ///         });
 class ApplicationMessageHub extends Stream<dynamic> implements Sink<dynamic> {
-  final Logger _logger = Logger("conduit");
+  final Logger _logger = Logger("tridev");
   final StreamController<dynamic> _outboundController =
       StreamController<dynamic>();
   final StreamController<dynamic> _inboundController =

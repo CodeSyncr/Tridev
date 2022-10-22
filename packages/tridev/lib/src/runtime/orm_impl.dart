@@ -7,7 +7,7 @@ import 'package:collection/collection.dart' show IterableExtension;
 import 'package:tridev/src/db/managed/managed.dart';
 import 'package:tridev/src/runtime/orm/entity_builder.dart';
 import 'package:tridev/src/utilities/sourcify.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class ManagedEntityRuntimeImpl extends ManagedEntityRuntime
     implements SourceCompiler {
@@ -419,8 +419,8 @@ return entity.symbolMap[Symbol(symbolName)];
       ..addAll(Set.from(importUris).map((uri) => "import '$uri';"));
 
     return """
-import 'package:conduit/conduit.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev_runtime/runtime.dart';
 import '$originalFileUri';
 ${directives.join("\n")}
 

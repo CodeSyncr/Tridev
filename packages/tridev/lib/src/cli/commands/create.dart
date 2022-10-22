@@ -65,15 +65,15 @@ class CLITemplateCreator extends CLICommand with CLITridevGlobal {
       if (tridevPackageRef?.sourceType == "path") {
         if (!addDependencyOverridesToPackage(destDirectory.path, {
           "tridev": tridevLocation.uri,
-          "conduit_test": _packageUri(tridevLocation, 'test_harness'),
-          "conduit_codable": _packageUri(tridevLocation, 'codable'),
-          "conduit_common": _packageUri(tridevLocation, 'common'),
-          "conduit_common_test": _packageUri(tridevLocation, 'common_test'),
-          "conduit_config": _packageUri(tridevLocation, 'config'),
-          "conduit_isolate_exec": _packageUri(tridevLocation, 'isolate_exec'),
-          "conduit_open_api": _packageUri(tridevLocation, 'open_api'),
-          "conduit_password_hash": _packageUri(tridevLocation, 'password_hash'),
-          "conduit_runtime": _packageUri(tridevLocation, 'runtime'),
+          "tridev_test": _packageUri(tridevLocation, 'test_harness'),
+          "tridev_codeunit": _packageUri(tridevLocation, 'codeunit'),
+          "tridev_common": _packageUri(tridevLocation, 'common'),
+          "tridev_common_test": _packageUri(tridevLocation, 'common_test'),
+          "tridev_config": _packageUri(tridevLocation, 'config'),
+          "tridev_isolate_exec": _packageUri(tridevLocation, 'isolate_exec'),
+          "tridev_open_api": _packageUri(tridevLocation, 'open_api'),
+          "tridev_security_hash": _packageUri(tridevLocation, 'password_hash'),
+          "tridev_runtime": _packageUri(tridevLocation, 'runtime'),
         })) {
           displayError(
               'You are running from a local source (pub global activate --source=path) version of tridev and are missing the source for some dependencies.');

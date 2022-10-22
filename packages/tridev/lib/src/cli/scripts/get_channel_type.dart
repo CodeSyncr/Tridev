@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:mirrors';
 
-import 'package:conduit/src/application/channel.dart';
-import 'package:conduit_isolate_exec/conduit_isolate_exec.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev/src/application/channel.dart';
+import 'package:tridev_isolate_exec/tridev_isolate_exec.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class GetChannelExecutable extends Executable<String> {
   GetChannelExecutable(Map<String, dynamic> message) : super(message);
@@ -23,8 +23,8 @@ class GetChannelExecutable extends Executable<String> {
   }
 
   static List<String> importsForPackage(String? packageName) => [
-        "package:conduit/conduit.dart",
+        "package:tridev/tridev.dart",
         "package:$packageName/$packageName.dart",
-        "package:conduit_runtime/runtime.dart"
+        "package:tridev_runtime/runtime.dart"
       ];
 }

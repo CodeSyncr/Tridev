@@ -19,7 +19,7 @@ class CLIDocumentServe extends CLICommand with CLIProject, CLIDocumentOptions {
   StoppableProcess? runningProcess;
 
   Directory get _hostedDirectory =>
-      Directory.fromUri(projectDirectory!.uri.resolve(".conduit_spec"));
+      Directory.fromUri(projectDirectory!.uri.resolve(".tridev_spec"));
 
   @override
   Future<int> handle() async {
@@ -125,6 +125,6 @@ class CLIDocumentServe extends CLICommand with CLIProject, CLIDocumentOptions {
 
   @override
   String get detailedDescription {
-    return "This tool will start an HTTP server that serves an API reference web page. See `conduit document --help` for configuration options.";
+    return "This tool will start an HTTP server that serves an API reference web page. See `tridev document --help` for configuration options.";
   }
 }

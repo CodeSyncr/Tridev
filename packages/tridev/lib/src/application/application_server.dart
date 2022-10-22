@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 import 'package:logging/logging.dart';
 import 'package:tridev/src/application/channel.dart';
 

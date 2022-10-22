@@ -9,7 +9,7 @@ import 'package:tridev/src/cli/scripts/run_upgrade.dart';
 import 'package:tridev/src/db/postgresql/postgresql_persistent_store.dart';
 import 'package:tridev/src/db/query/query.dart';
 import 'package:tridev/src/db/schema/schema.dart';
-import 'package:conduit_isolate_exec/conduit_isolate_exec.dart';
+import 'package:tridev_isolate_exec/tridev_isolate_exec.dart';
 
 /// Used internally.
 class CLIDatabaseUpgrade extends CLICommand

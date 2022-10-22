@@ -2,8 +2,8 @@ import 'package:collection/collection.dart' show IterableExtension;
 import 'package:tridev/src/db/managed/managed.dart';
 import 'package:tridev/src/db/query/query.dart';
 import 'package:tridev/src/utilities/reference_counting_list.dart';
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 /// Instances of this class contain descriptions and metadata for mapping [ManagedObject]s to database rows.
 ///

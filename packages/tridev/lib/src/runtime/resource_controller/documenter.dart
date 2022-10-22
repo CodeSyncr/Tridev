@@ -9,9 +9,9 @@ import 'package:tridev/src/http/serializable.dart';
 import 'package:tridev/src/runtime/impl.dart';
 import 'package:tridev/src/runtime/resource_controller_impl.dart';
 import 'package:tridev/src/utilities/mirror_helpers.dart';
-import 'package:conduit_common/conduit_common.dart';
+import 'package:tridev_common/tridev_common.dart';
 
-import 'package:conduit_open_api/v3.dart';
+import 'package:tridev_open_api/v3.dart';
 
 bool isSerializable(Type type) {
   return reflectType(type).isSubtypeOf(reflectType(Serializable));

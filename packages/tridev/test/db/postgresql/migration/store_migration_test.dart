@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:conduit/conduit.dart';
-import 'package:conduit_common_test/conduit_common_test.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev_common_test/tridev_common_test.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -25,7 +25,7 @@ void main() {
         temporary: true);
 
     var rows = await store.execute(
-        "SELECT versionNumber, dateOfUpgrade FROM _conduit_version_pgsql");
+        "SELECT versionNumber, dateOfUpgrade FROM _tridev_version_pgsql");
     expect(rows.length, 1);
     expect(rows.first.first, 1);
   });
@@ -39,7 +39,7 @@ void main() {
     await store.upgrade(s1, [EmptyMigration()..version = 2], temporary: true);
 
     var rows = await store.execute(
-        "SELECT versionNumber, dateOfUpgrade FROM _conduit_version_pgsql");
+        "SELECT versionNumber, dateOfUpgrade FROM _tridev_version_pgsql");
     expect(rows.length, 2);
     expect(rows.first.first, 1);
     expect(rows.last.first, 2);

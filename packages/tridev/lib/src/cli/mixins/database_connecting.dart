@@ -6,7 +6,7 @@ import 'package:tridev/src/cli/metadata.dart';
 import 'package:tridev/src/cli/mixins/project.dart';
 import 'package:tridev/src/db/persistent_store/persistent_store.dart';
 import 'package:tridev/src/db/postgresql/postgresql_persistent_store.dart';
-import 'package:conduit_config/conduit_config.dart';
+import 'package:tridev_config/tridev_config.dart';
 
 abstract class CLIDatabaseConnectingCommand implements CLICommand, CLIProject {
   static const String flavorPostgreSQL = "postgres";

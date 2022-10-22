@@ -1,5 +1,5 @@
-import 'package:conduit_runtime/runtime.dart';
 import 'package:crypto/crypto.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class MigrationSource {
   MigrationSource(this.source, this.uri, int nameStartIndex, int nameEndIndex) {

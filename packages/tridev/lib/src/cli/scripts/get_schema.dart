@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:conduit/src/cli/command.dart';
-import 'package:conduit/src/cli/mixins/project.dart';
-import 'package:conduit/src/db/managed/data_model.dart';
-import 'package:conduit/src/db/schema/schema.dart';
-import 'package:conduit_isolate_exec/conduit_isolate_exec.dart';
+import 'package:tridev/src/cli/command.dart';
+import 'package:tridev/src/cli/mixins/project.dart';
+import 'package:tridev/src/db/managed/data_model.dart';
+import 'package:tridev/src/db/schema/schema.dart';
+import 'package:tridev_isolate_exec/tridev_isolate_exec.dart';
 
 class GetSchemaExecutable extends Executable<Map<String, dynamic>> {
   GetSchemaExecutable(Map<String, dynamic> message) : super(message);
@@ -23,9 +23,9 @@ class GetSchemaExecutable extends Executable<Map<String, dynamic>> {
   }
 
   static List<String> importsForPackage(String? packageName) => [
-        "package:conduit/conduit.dart",
+        "package:tridev/tridev.dart",
         "package:$packageName/$packageName.dart",
-        "package:conduit_runtime/runtime.dart"
+        "package:tridev_runtime/runtime.dart"
       ];
 }
 

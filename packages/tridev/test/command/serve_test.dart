@@ -4,8 +4,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:fs_test_agent/dart_project_agent.dart';
-import 'package:fs_test_agent/working_directory_agent.dart';
+import 'package:tridev_fs_agent/dart_project_agent.dart';
+import 'package:tridev_fs_agent/working_directory_agent.dart';
 import 'package:http/http.dart' as http;
 import 'package:pub_semver/pub_semver.dart';
 import 'package:test/test.dart';
@@ -16,12 +16,12 @@ import '../not_tests/cli_helpers.dart';
 File get certificateFile => File.fromUri(Directory.current.uri
     .resolve("../../")
     .resolve("ci/")
-    .resolve("conduit.cert.pem"));
+    .resolve("tridev.cert.pem"));
 
 File get keyFile => File.fromUri(Directory.current.uri
     .resolve("../../")
     .resolve("ci/")
-    .resolve("conduit.key.pem"));
+    .resolve("tridev.key.pem"));
 
 void main() {
   late CLIClient templateCli;
@@ -57,7 +57,7 @@ void main() {
     var thisVersion = Version.parse(thisPubspec["version"] as String);
     expect(projectUnderTestCli.output, contains("CLI Version: $thisVersion"));
     expect(projectUnderTestCli.output,
-        contains("Conduit project version: $thisVersion"));
+        contains("Tridev project version: $thisVersion"));
 
     var result = await http.get(Uri.parse("http://localhost:8888/example"));
     expect(result.statusCode, 200);
@@ -69,7 +69,7 @@ void main() {
 
   test("Ensure we don't find the base ApplicationChannel class", () async {
     projectUnderTestCli.agent.addOrReplaceFile(
-        "lib/application_test.dart", "import 'package:conduit/conduit.dart';");
+        "lib/application_test.dart", "import 'package:tridev/tridev.dart';");
 
     task = projectUnderTestCli.start("serve", ["-n", "1"]);
     // ignore: unawaited_futures

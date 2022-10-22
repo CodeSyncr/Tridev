@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:conduit/conduit.dart';
-import 'package:conduit/src/cli/command.dart';
-import 'package:conduit/src/cli/mixins/openapi_options.dart';
-import 'package:conduit/src/cli/mixins/project.dart';
-import 'package:conduit_isolate_exec/conduit_isolate_exec.dart';
-import 'package:conduit_open_api/v3.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/src/cli/command.dart';
+import 'package:tridev/src/cli/mixins/openapi_options.dart';
+import 'package:tridev/src/cli/mixins/project.dart';
+import 'package:tridev_isolate_exec/tridev_isolate_exec.dart';
+import 'package:tridev_open_api/v3.dart';
+import 'package:tridev_runtime/runtime.dart';
 import 'package:yaml/yaml.dart';
 
 class OpenAPIBuilder extends Executable<Map<String, dynamic>> {
@@ -137,13 +137,13 @@ class OpenAPIBuilder extends Executable<Map<String, dynamic>> {
   }
 
   static List<String> importsForPackage(String? packageName) => [
-        "package:conduit/conduit.dart",
+        "package:tridev/tridev.dart",
         "package:$packageName/$packageName.dart",
         "package:yaml/yaml.dart",
         "dart:convert",
         "dart:io",
-        "package:conduit_runtime/runtime.dart",
-        "package:conduit_open_api/v3.dart"
+        "package:tridev_runtime/runtime.dart",
+        "package:tridev_open_api/v3.dart"
       ];
 }
 

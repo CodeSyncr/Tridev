@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:conduit/src/utilities/token_generator.dart';
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_open_api/v3.dart';
+import 'package:tridev/src/utilities/token_generator.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_open_api/v3.dart';
 import 'package:crypto/crypto.dart';
 
 import 'auth.dart';
@@ -19,12 +19,12 @@ import 'auth.dart';
 ///
 /// [AuthServer]s can be customized through their [delegate]. This required property manages persistent storage of authorization
 /// objects among other tasks. There are security considerations for [AuthServerDelegate] implementations; prefer to use a tested
-/// implementation like `ManagedAuthDelegate` from `package:conduit/managed_auth.dart`.
+/// implementation like `ManagedAuthDelegate` from `package:tridev/managed_auth.dart`.
 ///
 /// Usage example with `ManagedAuthDelegate`:
 ///
-///         import 'package:conduit/conduit.dart';
-///         import 'package:conduit/managed_auth.dart';
+///         import 'package:tridev/tridev.dart';
+///         import 'package:tridev/managed_auth.dart';
 ///
 ///         class User extends ManagedObject<_User> implements _User, ManagedAuthResourceOwner {}
 ///         class _User extends ManagedAuthenticatable {}
@@ -70,7 +70,7 @@ class AuthServer implements AuthValidator, APIComponentDocumenter {
   /// This instance is responsible for storing, fetching and deleting instances of
   /// [AuthToken], [AuthCode] and [AuthClient] by implementing the [AuthServerDelegate] interface.
   ///
-  /// It is preferable to use the implementation of [AuthServerDelegate] from 'package:conduit/managed_auth.dart'. See
+  /// It is preferable to use the implementation of [AuthServerDelegate] from 'package:tridev/managed_auth.dart'. See
   /// [AuthServer] for more details.
   final AuthServerDelegate delegate;
 
@@ -427,7 +427,7 @@ class AuthServer implements AuthValidator, APIComponentDocumenter {
     final basic = APISecurityScheme.http("basic")
       ..description =
           "This endpoint requires an OAuth2 Client ID and Secret as the Basic Authentication username and password. "
-              "If the client ID does not have a secret (public client), the password is the empty string (retain the separating colon, e.g. 'com.conduit.app:').";
+              "If the client ID does not have a secret (public client), the password is the empty string (retain the separating colon, e.g. 'com.tridev.app:').";
     context.securitySchemes.register("oauth2-client-authentication", basic);
 
     final oauth2 = APISecurityScheme.oauth2({

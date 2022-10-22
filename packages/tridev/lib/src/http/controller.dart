@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_open_api/v3.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_open_api/v3.dart';
+import 'package:tridev_runtime/runtime.dart';
 import 'package:logging/logging.dart';
 
 import 'http.dart';

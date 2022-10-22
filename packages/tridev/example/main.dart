@@ -1,18 +1,18 @@
 /*
   This example demonstrates an HTTP application that uses the ORM and ORM-backed OAuth2 provider.
 
-  For building and running non-example applications, install 'conduit' command-line tool.
+  For building and running non-example applications, install 'tridev' command-line tool.
 
-      pub global activate conduit
-      conduit create my_app
+      pub global activate tridev
+      tridev create my_app
 
-  More examples available: https://github.com/conduit.dart/conduit_examples
+  More examples available: https://github.com/tridev.dart/tridev_examples
  */
 
 import 'dart:async';
 import 'dart:io';
-import 'package:conduit/conduit.dart';
-import 'package:conduit/managed_auth.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/managed_auth.dart';
 
 Future main() async {
   final app = Application<App>()

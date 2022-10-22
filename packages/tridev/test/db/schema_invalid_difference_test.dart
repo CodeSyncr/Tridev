@@ -1,4 +1,4 @@
-import 'package:conduit/src/db/db.dart';
+import 'package:tridev/src/db/db.dart';
 import 'package:test/test.dart';
 
 void main() {

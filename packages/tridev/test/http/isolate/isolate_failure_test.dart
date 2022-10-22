@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 
 void main() {
-  tearDownAll(Logger("conduit").clearListeners);
+  tearDownAll(Logger("tridev").clearListeners);
 
   group("Failures", () {
     test(

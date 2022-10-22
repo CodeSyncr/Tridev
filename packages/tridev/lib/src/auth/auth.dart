@@ -1,5 +1,5 @@
-import 'package:conduit_password_hash/conduit_password_hash.dart';
 import 'package:crypto/crypto.dart';
+import 'package:tridev_security_hash/tridev_security_hash.dart';
 
 import 'objects.dart';
 
@@ -16,7 +16,7 @@ export 'validator.dart';
 
 /// Exposes static utility methods for password, salt and API credential generation.
 ///
-/// Use the `conduit auth` tool to generate API credentials.
+/// Use the `tridev auth` tool to generate API credentials.
 class AuthUtility {
   /// A utility method to generate a password hash using the PBKDF2 scheme.
   ///

@@ -8,10 +8,10 @@ import 'package:tridev/src/http/controller.dart';
 import 'package:tridev/src/http/serializable.dart';
 import 'package:tridev/src/runtime/impl.dart';
 import 'package:tridev/src/runtime/orm/data_model_compiler.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 import 'package:yaml/yaml.dart';
 
-class ConduitCompiler extends Compiler {
+class TridevCompiler extends Compiler {
   @override
   Map<String, dynamic> compile(MirrorContext context) {
     final m = <String, dynamic>{};
@@ -46,18 +46,18 @@ class ConduitCompiler extends Compiler {
   @override
   void deflectPackage(Directory destinationDirectory) {
     final libFile = File.fromUri(
-        destinationDirectory.uri.resolve("lib/").resolve("conduit.dart"));
+        destinationDirectory.uri.resolve("lib/").resolve("tridev.dart"));
     final contents = libFile.readAsStringSync();
     libFile.writeAsStringSync(contents.replaceFirst(
-        "export 'package:conduit/src/runtime/compiler.dart';", ""));
+        "export 'package:tridev/src/runtime/compiler.dart';", ""));
   }
 
   @override
   void didFinishPackageGeneration(BuildContext context) {
     if (context.forTests) {
       final devPackages = [
-        {'name': 'conduit_test', 'path': 'test_harness'},
-        {'name': 'conduit_common_test', 'path': 'common_test'},
+        {'name': 'tridev_test', 'path': 'test_harness'},
+        {'name': 'tridev_common_test', 'path': 'common_test'},
         {'name': 'fs_test_agent', 'path': 'fs_test_agent'},
       ];
       final targetPubspecFile =
@@ -74,37 +74,37 @@ class ConduitCompiler extends Compiler {
             dst: context.buildPackagesDirectory.uri.resolve(package['path']!));
       }
 
-      pubspecContents["dependency_overrides"]["conduit"] =
-          pubspecContents["dependencies"]["conduit"];
+      pubspecContents["dependency_overrides"]["tridev"] =
+          pubspecContents["dependencies"]["tridev"];
       targetPubspecFile.writeAsStringSync(json.encode(pubspecContents));
 
-      final conduitPackages = [
-        {'name': 'conduit_codable', 'path': 'codable'},
-        {'name': 'conduit_common', 'path': 'common'},
-        {'name': 'conduit_config', 'path': 'config'},
-        {'name': 'conduit_isolate_exec', 'path': 'isolate_exec'},
-        {'name': 'conduit_open_api', 'path': 'open_api'},
-        {'name': 'conduit_password_hash', 'path': 'password_hash'},
+      final tridevPackages = [
+        {'name': 'tridev_codable', 'path': 'codable'},
+        {'name': 'tridev_common', 'path': 'common'},
+        {'name': 'tridev_config', 'path': 'config'},
+        {'name': 'tridev_isolate_exec', 'path': 'isolate_exec'},
+        {'name': 'tridev_open_api', 'path': 'open_api'},
+        {'name': 'tridev_password_hash', 'path': 'password_hash'},
       ];
-      _overwritePackageDependency(context, 'conduit', conduitPackages);
+      _overwritePackageDependency(context, 'tridev', tridevPackages);
 
       final runtimePackages = [
-        {'name': 'conduit_isolate_exec', 'path': 'isolate_exec'},
+        {'name': 'tridev_isolate_exec', 'path': 'isolate_exec'},
       ];
-      _overwritePackageDependency(context, 'conduit_runtime', runtimePackages);
+      _overwritePackageDependency(context, 'tridev_runtime', runtimePackages);
 
       final commonTestPackages = [
-        {'name': 'conduit_common', 'path': 'common'},
+        {'name': 'tridev_common', 'path': 'common'},
       ];
       _overwritePackageDependency(context, 'common_test', commonTestPackages);
 
       final commonPackages = [
-        {'name': 'conduit_open_api', 'path': 'open_api'},
+        {'name': 'tridev_open_api', 'path': 'open_api'},
       ];
       _overwritePackageDependency(context, 'common', commonPackages);
 
       final oapiPackages = [
-        {'name': 'conduit_codable', 'path': 'codable'},
+        {'name': 'tridev_codable', 'path': 'codable'},
       ];
       _overwritePackageDependency(context, 'open_api', oapiPackages);
     }

@@ -2,7 +2,7 @@ import 'dart:mirrors';
 
 import 'package:tridev/src/db/managed/managed.dart';
 import 'package:tridev/src/runtime/orm/entity_builder.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class DataModelCompiler {
   Map<String, dynamic> compile(MirrorContext context) {

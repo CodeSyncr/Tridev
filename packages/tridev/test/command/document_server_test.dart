@@ -2,8 +2,8 @@
 @Tags(["cli"])
 import 'dart:io';
 
-import 'package:fs_test_agent/dart_project_agent.dart';
-import 'package:fs_test_agent/working_directory_agent.dart';
+import 'package:tridev_fs_agent/dart_project_agent.dart';
+import 'package:tridev_fs_agent/working_directory_agent.dart';
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 
@@ -40,7 +40,7 @@ void main() {
 
     expect(
         Directory.fromUri(projectUnderTestCli.agent.workingDirectory.uri
-                .resolve(".conduit_spec/"))
+                .resolve(".tridev_spec/"))
             .existsSync(),
         true);
 
@@ -52,7 +52,7 @@ void main() {
     expect(await task.exitCode, 0);
     expect(
         Directory.fromUri(projectUnderTestCli.agent.workingDirectory.uri
-                .resolve(".conduit_spec/"))
+                .resolve(".tridev_spec/"))
             .existsSync(),
         false);
   });

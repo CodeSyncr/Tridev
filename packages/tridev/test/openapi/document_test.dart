@@ -1,11 +1,10 @@
 import 'dart:async';
 
-import 'package:conduit/conduit.dart';
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_open_api/v3.dart';
-import 'package:conduit_runtime/runtime.dart';
-
 import 'package:test/test.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_open_api/v3.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 /*
 These tests handle the core behavior of document generation. Types that extend doc-gen behavior, e.g. AuthServer, ResourceController, etc.

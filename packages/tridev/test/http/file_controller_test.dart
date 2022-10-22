@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 
@@ -12,7 +12,7 @@ void main() {
   var jsonContents = {"key": "value"};
   var cssContents = "a { color: red; }";
   var jsContents = "f() {}";
-  var htmlContents = "<html><h3>Conduit</h3></html>";
+  var htmlContents = "<html><h3>Tridev</h3></html>";
   var jsonFile = File.fromUri(fileDirectory.uri.resolve("file.json"));
   var cssFile = File.fromUri(fileDirectory.uri.resolve("file.css"));
   var jsFile = File.fromUri(fileDirectory.uri.resolve("file.js"));

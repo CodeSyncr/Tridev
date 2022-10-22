@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -17,10 +17,10 @@ void main() {
 
       app = Application<TestChannel>()
         ..options.certificateFilePath = ciDirUri
-            .resolve("conduit.cert.pem")
+            .resolve("tridev.cert.pem")
             .toFilePath(windows: Platform.isWindows)
         ..options.privateKeyFilePath = ciDirUri
-            .resolve("conduit.key.pem")
+            .resolve("tridev.key.pem")
             .toFilePath(windows: Platform.isWindows);
 
       await app.start(numberOfInstances: 1);
@@ -41,7 +41,7 @@ void main() {
 }
 
 Uri getCIDirectoryUri() {
-  final env = Platform.environment['CONDUIT_CI_DIR_LOCATION'];
+  final env = Platform.environment['TRIDEV_CI_DIR_LOCATION'];
   return env != null
       ? Uri.parse(env)
       : Directory.current.uri.resolve("../../").resolve("ci/");

@@ -3,8 +3,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:fs_test_agent/dart_project_agent.dart';
-import 'package:fs_test_agent/working_directory_agent.dart';
+import 'package:tridev_fs_agent/dart_project_agent.dart';
+import 'package:tridev_fs_agent/working_directory_agent.dart';
 import 'package:path/path.dart' as path_lib;
 import 'package:path/path.dart';
 import 'package:pub_semver/pub_semver.dart';
@@ -120,12 +120,12 @@ void main() {
       List packages = jsonDecode(File(join(cli.agent.workingDirectory.path,
               "test_project", ".dart_tool/package_config.json"))
           .readAsStringSync())['packages'] as List;
-      final conduitPacakge =
-          packages.firstWhere((element) => element['name'] == 'conduit');
-      final conduitLocation = Uri.parse(conduitPacakge['rootUri'] as String)
-          .resolve(conduitPacakge['packageUri'] as String);
+      final tridevPacakge =
+          packages.firstWhere((element) => element['name'] == 'tridev');
+      final tridevLocation = Uri.parse(tridevPacakge['rootUri'] as String)
+          .resolve(tridevPacakge['packageUri'] as String);
 
-      final path = path_lib.normalize(path_lib.fromUri(conduitLocation));
+      final path = path_lib.normalize(path_lib.fromUri(tridevLocation));
       expect(path, path_lib.join(Directory.current.path, "lib"));
     });
 
@@ -135,21 +135,21 @@ void main() {
         .whereType<Directory>()
         .map((fse) => fse.uri.pathSegments[fse.uri.pathSegments.length - 2])
         .toList();
-    final conduitPubspec = loadYaml(File("pubspec.yaml").readAsStringSync());
-    final conduitVersion = Version.parse("${conduitPubspec["version"]}");
+    final tridevPubspec = loadYaml(File("pubspec.yaml").readAsStringSync());
+    final tridevVersion = Version.parse("${tridevPubspec["version"]}");
 
     for (var template in templates) {
       test(
-        "Templates can use 'this' version of Conduit in their dependencies",
+        "Templates can use 'this' version of Tridev in their dependencies",
         () {
           var projectDir = Directory(join("templates", template));
           var pubspec = File(join(projectDir.path, "pubspec.yaml"));
           var contents = loadYaml(pubspec.readAsStringSync());
           final projectVersionConstraint = VersionConstraint.parse(
-            contents["dependencies"]["conduit"] as String,
+            contents["dependencies"]["tridev"] as String,
           );
           print(projectVersionConstraint);
-          expect(projectVersionConstraint.allows(conduitVersion), isTrue);
+          expect(projectVersionConstraint.allows(tridevVersion), isTrue);
         },
       );
 

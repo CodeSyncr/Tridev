@@ -8,7 +8,7 @@ import 'package:tridev/src/application/channel.dart';
 import 'package:tridev/src/cli/command.dart';
 import 'package:tridev/src/cli/metadata.dart';
 import 'package:tridev/src/cli/mixins/project.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 class CLIBuild extends CLICommand with CLIProject {
   @Flag("retain-build-artifacts",
@@ -57,7 +57,7 @@ class CLIBuild extends CLICommand with CLIProject {
 
   @override
   String get description {
-    return "Creates an executable of a Conduit application.";
+    return "Creates an executable of a Tridev application.";
   }
 
   String getScriptSource(String channelName) {
@@ -67,7 +67,7 @@ class CLIBuild extends CLICommand with CLIProject {
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import 'package:args/args.dart' as arg_package;
 import 'package:$packageName/$libraryName.dart';
 

@@ -1,8 +1,8 @@
 import "dart:core";
 
-import 'package:conduit/conduit.dart';
-import 'package:conduit/src/dev/helpers.dart';
-import 'package:conduit_open_api/v3.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/src/dev/helpers.dart';
+import 'package:tridev_open_api/v3.dart';
 import 'package:test/test.dart';
 
 void main() {

@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:conduit/src/cli/command.dart';
-import 'package:conduit/src/cli/commands/auth.dart';
-import 'package:conduit/src/cli/commands/build.dart';
-import 'package:conduit/src/cli/commands/create.dart';
-import 'package:conduit/src/cli/commands/db.dart';
-import 'package:conduit/src/cli/commands/document.dart';
-import 'package:conduit/src/cli/commands/serve.dart';
-import 'package:conduit/src/cli/commands/setup.dart';
+import 'package:tridev/src/cli/command.dart';
+import 'package:tridev/src/cli/commands/auth.dart';
+import 'package:tridev/src/cli/commands/build.dart';
+import 'package:tridev/src/cli/commands/create.dart';
+import 'package:tridev/src/cli/commands/db.dart';
+import 'package:tridev/src/cli/commands/document.dart';
+import 'package:tridev/src/cli/commands/serve.dart';
+import 'package:tridev/src/cli/commands/setup.dart';
 
 class Runner extends CLICommand {
   Runner() {
@@ -28,11 +28,11 @@ class Runner extends CLICommand {
 
   @override
   String get name {
-    return "conduit";
+    return "tridev";
   }
 
   @override
   String get description {
-    return "Conduit is a tool for managing Conduit applications.";
+    return "Tridev is a tool for managing Tridev applications.";
   }
 }

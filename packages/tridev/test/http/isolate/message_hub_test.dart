@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:collection/collection.dart' show IterableExtension;
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 

@@ -1,7 +1,7 @@
 import 'dart:mirrors';
 
-import 'package:conduit/conduit.dart';
-import 'package:conduit/src/runtime/orm/entity_mirrors.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/src/runtime/orm/entity_mirrors.dart';
 import 'package:test/test.dart';
 
 void main() {

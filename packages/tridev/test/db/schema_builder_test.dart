@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart' show IterableExtension;
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import 'package:test/test.dart';
 
 void main() {

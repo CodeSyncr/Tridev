@@ -1,5 +1,5 @@
-import 'package:conduit/src/http/route_node.dart';
-import 'package:conduit/src/http/route_specification.dart';
+import 'package:tridev/src/http/route_node.dart';
+import 'package:tridev/src/http/route_specification.dart';
 import "package:test/test.dart";
 
 void main() {

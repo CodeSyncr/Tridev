@@ -5,7 +5,7 @@ import 'package:tridev/src/http/resource_controller_interfaces.dart';
 import 'package:tridev/src/runtime/resource_controller/documenter.dart';
 import 'package:tridev/src/runtime/resource_controller_impl.dart';
 import 'package:tridev/src/utilities/sourcify.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 String getInvokerSource(BuildContext context,
     ResourceControllerRuntimeImpl controller, ResourceControllerOperation op) {

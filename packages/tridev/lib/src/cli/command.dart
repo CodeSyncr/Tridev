@@ -5,9 +5,9 @@ import 'dart:mirrors';
 
 import 'package:args/args.dart' as args;
 import 'package:collection/collection.dart' show IterableExtension;
-import 'package:conduit/src/cli/metadata.dart';
-import 'package:conduit/src/cli/running_process.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev/src/cli/metadata.dart';
+import 'package:tridev/src/cli/running_process.dart';
+import 'package:tridev_runtime/runtime.dart';
 import 'package:pub_semver/pub_semver.dart';
 import 'package:yaml/yaml.dart';
 
@@ -201,12 +201,12 @@ abstract class CLICommand {
       await determineToolVersion();
 
       if (showVersion) {
-        outputSink.writeln("Conduit CLI version: $toolVersion");
+        outputSink.writeln("Tridev CLI version: $toolVersion");
         return 0;
       }
 
       if (!isMachineOutput) {
-        displayInfo("Conduit CLI Version: $toolVersion");
+        displayInfo("Tridev CLI Version: $toolVersion");
       }
 
       preProcess();
@@ -237,12 +237,12 @@ abstract class CLICommand {
   Future determineToolVersion() async {
     try {
       var toolLibraryFilePath = (await Isolate.resolvePackageUri(
-              currentMirrorSystem().findLibrary(#conduit).uri))!
+              currentMirrorSystem().findLibrary(#tridev).uri))!
           .toFilePath(windows: Platform.isWindows);
-      var conduitDirectory = Directory(FileSystemEntity.parentOf(
+      var tridevDirectory = Directory(FileSystemEntity.parentOf(
           FileSystemEntity.parentOf(toolLibraryFilePath)));
       var toolPubspecFile =
-          File.fromUri(conduitDirectory.absolute.uri.resolve("pubspec.yaml"));
+          File.fromUri(tridevDirectory.absolute.uri.resolve("pubspec.yaml"));
 
       final toolPubspecContents =
           loadYaml(toolPubspecFile.readAsStringSync()) as Map;

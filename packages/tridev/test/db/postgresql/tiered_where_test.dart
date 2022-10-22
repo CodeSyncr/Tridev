@@ -1,6 +1,6 @@
-import 'package:conduit/conduit.dart';
-import 'package:conduit/src/dev/model_graph.dart';
-import 'package:conduit_common_test/conduit_common_test.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/src/dev/model_graph.dart';
+import 'package:tridev_common_test/tridev_common_test.dart';
 import 'package:test/test.dart';
 
 /*

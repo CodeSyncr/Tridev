@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit/src/cli/runner.dart';
-import 'package:conduit/src/cli/running_process.dart';
-import 'package:conduit_common_test/conduit_common_test.dart';
-import 'package:fs_test_agent/dart_project_agent.dart';
-import 'package:fs_test_agent/working_directory_agent.dart';
 import 'package:path/path.dart';
+import 'package:tridev/src/cli/runner.dart';
+import 'package:tridev/src/cli/running_process.dart';
+import 'package:tridev_common_test/tridev_common_test.dart';
+import 'package:tridev_fs_agent/dart_project_agent.dart';
+import 'package:tridev_fs_agent/working_directory_agent.dart';
 
 class CLIClient {
   CLIClient(this.agent);
@@ -38,7 +38,7 @@ class CLIClient {
   static Future deactivateCLI() {
     const String cmd = "dart";
 
-    return Process.run(cmd, ["pub", "global", "deactivate", "conduit"]);
+    return Process.run(cmd, ["pub", "global", "deactivate", "tridev"]);
   }
 
   Directory get defaultMigrationDirectory {
@@ -80,28 +80,28 @@ class CLIClient {
     final project = normalize(absolute(join('.')));
     if (template == null) {
       final client = CLIClient(DartProjectAgent(name, dependencies: {
-        "conduit": {"path": project}
+        "tridev": {"path": project}
       }, devDependencies: {
         "test": "^1.6.7"
       }, dependencyOverrides: {
-        'conduit_runtime': {'path': '${join(project, '..', 'runtime')}'},
-        'conduit_isolate_exec': {
+        'tridev_runtime': {'path': '${join(project, '..', 'runtime')}'},
+        'tridev_isolate_exec': {
           'path': '${join(project, '..', 'isolate_exec')}'
         },
-        'conduit_password_hash': {
+        'tridev_security_hash': {
           'path': '${join(project, '..', 'password_hash')}'
         },
-        'conduit_open_api': {'path': '${join(project, '..', 'open_api')}'},
-        'conduit_codable': {'path': '${join(project, '..', 'codable')}'},
-        'conduit_config': {'path': '${join(project, '..', 'config')}'},
-        'conduit_common': {'path': '${join(project, '..', 'common')}'},
+        'tridev_open_api': {'path': '${join(project, '..', 'open_api')}'},
+        'tridev_codeunit': {'path': '${join(project, '..', 'codable')}'},
+        'tridev_config': {'path': '${join(project, '..', 'config')}'},
+        'tridev_common': {'path': '${join(project, '..', 'common')}'},
         'fs_test_agent': {'path': '${join(project, '..', 'fs_test_agent')}'}
       }));
 
       client.projectAgent.addLibraryFile("channel", """
 import 'dart:async';
 
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 
 import '$name.dart';
 
@@ -156,7 +156,7 @@ class TestChannel extends ApplicationChannel {
     args.insert(0, command);
     args.addAll(defaultArgs ?? []);
 
-    print("Running 'conduit ${args.join(" ")}'");
+    print("Running 'tridev ${args.join(" ")}'");
     final saved = Directory.current;
     Directory.current = agent.workingDirectory;
 
@@ -178,7 +178,7 @@ class TestChannel extends ApplicationChannel {
     args.insert(0, command);
     args.addAll(defaultArgs ?? []);
 
-    print("Starting 'conduit ${args.join(" ")}'");
+    print("Starting 'tridev ${args.join(" ")}'");
     final saved = Directory.current;
     Directory.current = agent.workingDirectory;
 

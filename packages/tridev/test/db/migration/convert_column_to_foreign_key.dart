@@ -2,7 +2,7 @@
 import 'dart:io';
 
 import 'package:test/test.dart';
-import '../../../bin/conduit.dart' as c;
+import '../../../bin/tridev.dart' as c;
 
 void main() {
   /// TODO: migration does not support changing of column types

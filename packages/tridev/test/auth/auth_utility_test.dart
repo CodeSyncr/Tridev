@@ -1,4 +1,4 @@
-import 'package:conduit/src/auth/auth.dart';
+import 'package:tridev/src/auth/auth.dart';
 import 'package:test/test.dart';
 
 void main() {

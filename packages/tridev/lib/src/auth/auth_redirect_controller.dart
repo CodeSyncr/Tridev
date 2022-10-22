@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit/src/http/resource_controller.dart';
-import 'package:conduit/src/http/resource_controller_bindings.dart';
-import 'package:conduit/src/http/response.dart';
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_open_api/v3.dart';
+import 'package:tridev/src/http/resource_controller.dart';
+import 'package:tridev/src/http/resource_controller_bindings.dart';
+import 'package:tridev/src/http/response.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_open_api/v3.dart';
 
 import 'auth.dart';
 
@@ -23,7 +23,7 @@ abstract class AuthRedirectControllerDelegate {
   ///         POST https://example.com/auth/code
   ///         Content-Type: application/x-www-form-urlencoded
   ///
-  ///         response_type=code&client_id=com.conduit.app&state=o9u3jla&username=bob&password=password
+  ///         response_type=code&client_id=com.tridev.app&state=o9u3jla&username=bob&password=password
   ///
   ///
   /// If not null, [scope] should also be included as an additional form parameter.

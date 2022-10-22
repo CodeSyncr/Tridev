@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import 'package:test/test.dart';
 
 void main() {

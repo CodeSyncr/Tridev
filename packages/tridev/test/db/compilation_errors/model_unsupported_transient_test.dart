@@ -1,4 +1,4 @@
-import 'package:conduit/conduit.dart';
+import 'package:tridev/tridev.dart';
 import 'package:test/test.dart';
 
 class InvalidTransientModel extends ManagedObject<_InvalidTransientModel>

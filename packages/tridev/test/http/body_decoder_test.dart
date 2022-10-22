@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:conduit/conduit.dart';
-import 'package:conduit/src/dev/helpers.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/src/dev/helpers.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
 import 'package:pedantic/pedantic.dart';

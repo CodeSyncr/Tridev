@@ -1,6 +1,6 @@
-import 'package:conduit/src/db/managed/data_model_manager.dart';
-import 'package:conduit_common/conduit_common.dart';
-import 'package:conduit_open_api/v3.dart';
+import 'package:tridev/src/db/managed/data_model_manager.dart';
+import 'package:tridev_common/tridev_common.dart';
+import 'package:tridev_open_api/v3.dart';
 import 'package:meta/meta.dart';
 
 import '../../http/serializable.dart';
@@ -64,7 +64,7 @@ abstract class ManagedBacking {
 /// A subclass of this type must implement its table definition and use it as the type argument of [ManagedObject]. Properties and methods
 /// declared in the subclass (also called the 'instance type') are not stored in the database.
 ///
-/// See more documentation on defining a data model at http://conduit.io/docs/db/modeling_data/
+/// See more documentation on defining a data model at http://blackant.io/tridev/docs/db/modeling_data/
 abstract class ManagedObject<T> extends Serializable {
   static bool get shouldAutomaticallyDocument => false;
 

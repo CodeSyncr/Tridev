@@ -1,9 +1,9 @@
 // ignore: unnecessary_const
 @Tags(["cli"])
-import 'package:conduit/conduit.dart';
-import 'package:conduit/managed_auth.dart';
-import 'package:conduit_common_test/conduit_common_test.dart';
-import 'package:fs_test_agent/dart_project_agent.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/managed_auth.dart';
+import 'package:tridev_common_test/tridev_common_test.dart';
+import 'package:tridev_fs_agent/dart_project_agent.dart';
 import 'package:path/path.dart';
 import 'package:test/test.dart';
 
@@ -20,20 +20,18 @@ void main() {
     final project = normalize(absolute(join('.')));
 
     cli = CLIClient(DartProjectAgent("application_test", dependencies: {
-      "conduit": {"path": project},
+      "tridev": {"path": project},
     }, dependencyOverrides: {
-      'conduit_runtime': {'path': '${join(project, '..', 'runtime')}'},
-      'conduit_isolate_exec': {
-        'path': '${join(project, '..', 'isolate_exec')}'
+      'tridev_runtime': {'path': '${join(project, '..', 'runtime')}'},
+      'tridev_isolate_exec': {'path': '${join(project, '..', 'isolate_exec')}'},
+      'tridev_secutity_hash': {
+        'path': '${join(project, '..', 'security_hash')}'
       },
-      'conduit_password_hash': {
-        'path': '${join(project, '..', 'password_hash')}'
-      },
-      'conduit_open_api': {'path': '${join(project, '..', 'open_api')}'},
-      'conduit_codable': {'path': '${join(project, '..', 'codable')}'},
-      'conduit_config': {'path': '${join(project, '..', 'config')}'},
-      'conduit_common': {'path': '${join(project, '..', 'common')}'},
-      'fs_test_agent': {'path': '${join(project, '..', 'fs_test_agent')}'}
+      'tridev_open_api': {'path': '${join(project, '..', 'open_api')}'},
+      'tridev_codeunit': {'path': '${join(project, '..', 'codeunit')}'},
+      'tridev_config': {'path': '${join(project, '..', 'config')}'},
+      'tridev_common': {'path': '${join(project, '..', 'common')}'},
+      'tridev_fs_agent': {'path': '${join(project, '..', 'tridev_fs_agent')}'}
     }))
       ..defaultArgs = ["--connect", PostgresTestConfig().connectionUrl];
     await cli.agent.getDependencies();

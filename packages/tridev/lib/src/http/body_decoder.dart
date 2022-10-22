@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:tridev/src/http/http.dart';
-import 'package:conduit_runtime/runtime.dart';
+import 'package:tridev_runtime/runtime.dart';
 
 /// Decodes [bytes] according to [contentType].
 ///
@@ -76,7 +76,7 @@ abstract class BodyDecoder {
   /// produces a value that is not [T], a bad request error [Response] is thrown.
   ///
   /// [T] must be a primitive type (String, int, double, bool, or a List or Map containing only these types).
-  /// An error is not thrown if T is not one of these types, but compiled Conduit applications may fail at runtime.
+  /// An error is not thrown if T is not one of these types, but compiled Tridev applications may fail at runtime.
   ///
   /// Performance considerations:
   ///

@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:isolate';
 
-import 'package:conduit/src/application/application.dart';
-import 'package:conduit/src/application/channel.dart';
+import 'package:tridev/src/application/application.dart';
+import 'package:tridev/src/application/channel.dart';
 
 /*
   Warning: do not remove. This method is invoked by a generated script.

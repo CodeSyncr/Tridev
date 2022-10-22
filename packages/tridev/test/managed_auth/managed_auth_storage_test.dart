@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit/conduit.dart';
-import 'package:conduit/managed_auth.dart';
-import 'package:conduit_common_test/conduit_common_test.dart';
-import 'package:conduit_test/conduit_test.dart';
+import 'package:tridev/tridev.dart';
+import 'package:tridev/managed_auth.dart';
+import 'package:tridev_common_test/tridev_common_test.dart';
+import 'package:tridev_test/tridev_test.dart';
 import 'package:test/test.dart';
 
 // These tests mostly duplicate authenticate_test.dart, but also add a few more

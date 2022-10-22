@@ -4,7 +4,7 @@ import 'package:tridev/src/application/channel.dart';
 import 'package:tridev/src/application/service_registry.dart';
 import 'package:tridev/src/db/managed/data_model_manager.dart';
 import 'package:tridev/src/http/http.dart';
-import 'package:conduit_common/conduit_common.dart';
+import 'package:tridev_common/tridev_common.dart';
 
 import '../persistent_store/persistent_store.dart';
 import '../query/query.dart';
@@ -80,7 +80,6 @@ class ManagedContext implements APIComponentDocumenter {
   /// [transactionBlock], roll back any changes made in the transaction, but this method will not
   /// throw.
   ///
-  /// TODO: the following statement is not true.
   /// Rollback takes a string but the transaction
   /// returns <T>.  It would seem to be a better idea to still throw the manual Rollback
   /// so the user has a consistent method of handling the rollback. We could add a property

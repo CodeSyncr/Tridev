@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit_isolate_exec/conduit_isolate_exec.dart';
 import 'package:tridev/src/cli/command.dart';
 import 'package:tridev/src/cli/metadata.dart';
 import 'package:tridev/src/cli/migration_source.dart';
 import 'package:tridev/src/cli/mixins/project.dart';
 import 'package:tridev/src/cli/scripts/schema_builder.dart';
 import 'package:tridev/src/db/schema/schema.dart';
+import 'package:tridev_isolate_exec/tridev_isolate_exec.dart';
 
 abstract class CLIDatabaseManagingCommand implements CLICommand, CLIProject {
   @Option("migration-directory",
