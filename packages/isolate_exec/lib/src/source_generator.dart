@@ -9,7 +9,7 @@ import 'package:analyzer/dart/analysis/results.dart';
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/file_system/file_system.dart';
 import 'package:analyzer/file_system/physical_file_system.dart';
-import 'package:conduit_isolate_exec/src/executable.dart';
+import 'package:tridev_isolate_exec/src/executable.dart';
 
 class SourceGenerator {
   SourceGenerator(

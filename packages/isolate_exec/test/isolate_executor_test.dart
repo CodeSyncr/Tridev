@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:conduit_isolate_exec/conduit_isolate_exec.dart';
+import 'package:tridev_isolate_exec/tridev_isolate_exec.dart';
 import 'package:path/path.dart';
 import 'package:test/test.dart';
 
