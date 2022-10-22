@@ -271,8 +271,7 @@ class APIComponentCollection<T extends APIObject?> {
   /// has been registered for [type], an error is thrown.
   T getObjectWithType(Type type) {
     final obj = _getInstanceOf()!;
-    obj.referenceURI =
-        Uri(path: "/components/$_typeName/conduit-typeref:$type");
+    obj.referenceURI = Uri(path: "/components/$_typeName/tridev-typeref:$type");
 
     if (_typeReferenceMap.containsKey(type)) {
       obj.referenceURI = _typeReferenceMap[type]!.referenceURI;

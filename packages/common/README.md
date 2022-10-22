@@ -1,4 +1,5 @@
-# conduit-common
-Common utility classes and interfaces shared by conduit packages.
+# tridev-common
 
-The primary purpose of this package is to aid in decoupling conduit components.
+Common utility classes and interfaces shared by tridev packages.
+
+The primary purpose of this package is to aid in decoupling tridev components.
