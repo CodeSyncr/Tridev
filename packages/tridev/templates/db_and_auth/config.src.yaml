@@ -1,6 +1,6 @@
 database:
-  username: conduit_test_user
-  password: conduit!
+  username: tridev_test_user
+  password: tridev!
   host: localhost
   port: 15432 # change this value
-  databaseName: conduit_test_db
+  databaseName: tridev_test_db

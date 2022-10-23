@@ -1,8 +1,8 @@
-# codable
+# tridev_codeunit
 
 A library for encoding and decoding dynamic data into Dart objects.
 
-## Basic Usage 
+## Basic Usage
 
 Data objects extend `Coding`:
 
@@ -15,7 +15,7 @@ class Person extends Coding {
     // must call super
     super.decode(object);
 
-    name = object.decode("name");   
+    name = object.decode("name");
   }
 
   @override
@@ -25,7 +25,7 @@ class Person extends Coding {
 }
 ```
 
-An object that extends `Coding` can be read from JSON: 
+An object that extends `Coding` can be read from JSON:
 
 ```dart
 final json = json.decode(...);
@@ -65,21 +65,21 @@ class Team extends Coding {
 }
 ```
 
-## Dynamic Type Casting 
+## Dynamic Type Casting
 
 Types with primitive type arguments (e.g., `List<String>` or `Map<String, int>`) are a particular pain point when decoding. Override `castMap` in `Coding` to perform type coercion.
 You must import `package:codable/cast.dart as cast` and prefix type names with `cast`.
 
 ```dart
 import 'package:codable/cast.dart' as cast;
-class Container extends Coding {  
+class Container extends Coding {
   List<String> things;
 
   @override
   Map<String, cast.Cast<dynamic>> get castMap => {
     "things": cast.List(cast.String)
   };
-  
+
 
   @override
   void decode(KeyedArchive object) {
@@ -94,20 +94,19 @@ class Container extends Coding {
   }
 }
 
-``` 
-
+```
 
 ## Document References
 
-`Coding` objects may be referred to multiple times in a document without duplicating their structure. An object is referenced with the `$key` key. 
-For example, consider the following JSON: 
+`Coding` objects may be referred to multiple times in a document without duplicating their structure. An object is referenced with the `$key` key.
+For example, consider the following JSON:
 
 ```json
 {
   "components": {
     "thing": {
       "name": "The Thing"
-    }    
+    }
   },
   "data": {
     "$ref": "#/components/thing"
@@ -124,7 +123,7 @@ In the above, the decoded value of `data` inherits all properties from `/compone
 }
 ```
 
-You may create references in your in-memory data structures through the `Coding.referenceURI`. 
+You may create references in your in-memory data structures through the `Coding.referenceURI`.
 
 ```dart
 final person = Person()..referenceURI = Uri(path: "/teams/engineering/manager");
@@ -141,4 +140,3 @@ The above person is encoded as:
 You may have cyclical references.
 
 See the specification for [JSON Schema](http://json-schema.org) and the `$ref` keyword for more details.
-

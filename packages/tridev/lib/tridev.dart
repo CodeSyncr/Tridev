@@ -16,9 +16,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 /// See documentation guides at https://blackant.io/tridev/docs.
 library tridev;
 
-export 'package:tridev_config/tridev_config.dart';
 export 'package:logging/logging.dart';
 export 'package:tridev/src/runtime/compiler.dart';
+export 'package:tridev_config/tridev_config.dart';
 
 export 'src/application/application.dart';
 export 'src/auth/auth.dart';

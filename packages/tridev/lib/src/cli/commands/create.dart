@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:tridev/src/cli/command.dart';
-import 'package:tridev/src/cli/metadata.dart';
 import 'package:path/path.dart' as path_lib;
 import 'package:path/path.dart';
 import 'package:pub_cache/pub_cache.dart';
+import 'package:tridev/src/cli/command.dart';
+import 'package:tridev/src/cli/metadata.dart';
 import 'package:yaml/yaml.dart';
 
 /// Used internally.
@@ -72,7 +72,7 @@ class CLITemplateCreator extends CLICommand with CLITridevGlobal {
           "tridev_config": _packageUri(tridevLocation, 'config'),
           "tridev_isolate_exec": _packageUri(tridevLocation, 'isolate_exec'),
           "tridev_open_api": _packageUri(tridevLocation, 'open_api'),
-          "tridev_security_hash": _packageUri(tridevLocation, 'password_hash'),
+          "tridev_security_hash": _packageUri(tridevLocation, 'security_hash'),
           "tridev_runtime": _packageUri(tridevLocation, 'runtime'),
         })) {
           displayError(

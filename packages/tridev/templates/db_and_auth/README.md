@@ -2,16 +2,16 @@
 
 ## Database
 
-You will need a local database for testing, and another database for running the application locally. The behavior and configuration of these databases are documented here: http://conduit.io/docs/testing/mixins/.
+You will need a local database for testing, and another database for running the application locally. The behavior and configuration of these databases are documented here: https://blackant.io/tridev/docs/testing/mixins/.
 
-To run tests, you must have a configuration file named `config.src.yaml`. By default, it is configured to connect your application to a database named `conduit_test_db` (documented in the link above) and should not need to be edited. Tables are automatically created and deleted during test execution.
+To run tests, you must have a configuration file named `config.src.yaml`. By default, it is configured to connect your application to a database named `tridev_test_db` (documented in the link above) and should not need to be edited. Tables are automatically created and deleted during test execution.
 
 To run your application locally, you must have a `config.yaml` file that has correct database connection info, which should point to a local database specific to your application (documented in link above).
 When running locally, you must apply database migrations to your database before using it. The following commands generate a migration file from your project and then apply it to a database. Replace your database's connection details with the details below.
 
 ```
-conduit db generate
-conduit db upgrade --connect postgres://dart:dart@localhost:5432/wildfire
+tridev db generate
+tridev db upgrade --connect postgres://dart:dart@localhost:5432/wildfire
 ```
 
 ### Configure OAuth
@@ -19,16 +19,16 @@ conduit db upgrade --connect postgres://dart:dart@localhost:5432/wildfire
 To run your application locally, you must also register OAuth 2.0 clients in the application database. Use the same database credentials after you have applied the migration.
 
 ```
-conduit auth add-client --id com.local.test \
+tridev auth add-client --id com.local.test \
     --secret mysecret \
     --connect postgres://user:password@localhost:5432/wildfire
 ```
 
-To run your tests with OAuth 2.0 client identifiers, see this documentation: http://conduit.io/docs/testing/mixins/#testing-applications-that-use-oauth-20.
+To run your tests with OAuth 2.0 client identifiers, see this documentation: https://blackant.io/tridev/docs/testing/mixins/#testing-applications-that-use-oauth-20.
 
 ## Running the server locally
 
-Run `conduit serve` from this directory to run the application. For running within an IDE, run `bin/main.dart`.
+Run `tridev serve` from this directory to run the application. For running within an IDE, run `bin/main.dart`.
 
 ## Running CURL commands to test the end points
 
@@ -36,7 +36,7 @@ The following CURL commands are valid HTTP requests for the routes configured by
 
 ### Endpoints Requiring Client Authentication
 
-Endpoints that are not associated with a user must have client authentication using the credentials added with `conduit auth`. These routes are `POST /register` and `POST /auth/token`.
+Endpoints that are not associated with a user must have client authentication using the credentials added with `tridev auth`. These routes are `POST /register` and `POST /auth/token`.
 
 The client id and client secret are combined into a colon (`:`) delimited string, then base64 encoded and added as a `Basic` authorization header. For example, the client id `com.local.test` and secret `mysecret` is combined into `com.local.test:mysecret` then base64 encoded. The header `Authorization: Basic $base64Credentials` must be added to each endpoint requiring this type of authentication.
 
@@ -140,11 +140,11 @@ You should see a response similar to the following:
 
 ## Swqgger UI Client
 
-To generate a SwaggerUI client, run `conduit document client`.
+To generate a SwaggerUI client, run `tridev document client`.
 
 ## Running Application Tests
 
-To run all tests for this application, run the following in this directory. Remember, the tests assume the database to be `conduit_test_db`.
+To run all tests for this application, run the following in this directory. Remember, the tests assume the database to be `tridev_test_db`.
 
 ```
 pub run test
@@ -154,4 +154,4 @@ The default configuration file used when testing is `config.src.yaml`. This file
 
 ## Deploying an Application
 
-See the documentation for [Deployment](https://conduit.io/docs/deploy/).
+See the documentation for [Deployment](https://tridev.io/docs/deploy/).

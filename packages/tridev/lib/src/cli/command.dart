@@ -5,10 +5,10 @@ import 'dart:mirrors';
 
 import 'package:args/args.dart' as args;
 import 'package:collection/collection.dart' show IterableExtension;
+import 'package:pub_semver/pub_semver.dart';
 import 'package:tridev/src/cli/metadata.dart';
 import 'package:tridev/src/cli/running_process.dart';
 import 'package:tridev_runtime/runtime.dart';
-import 'package:pub_semver/pub_semver.dart';
 import 'package:yaml/yaml.dart';
 
 /// Exceptions thrown by command line interfaces.

@@ -2,9 +2,9 @@
 
 ## Running the Application Locally
 
-Run `conduit serve` from this directory to run the application. For running within an IDE, run `bin/main.dart`. By default, a configuration file named `config.yaml` will be used.
+Run `tridev serve` from this directory to run the application. For running within an IDE, run `bin/main.dart`. By default, a configuration file named `config.yaml` will be used.
 
-To generate a SwaggerUI client, run `conduit document client`.
+To generate a SwaggerUI client, run `tridev document client`.
 
 ## Running Application Tests
 
@@ -18,4 +18,4 @@ The default configuration file used when testing is `config.src.yaml`. This file
 
 ## Deploying an Application
 
-See the documentation for [Deployment](https://conduit.io/docs/deploy/).
+See the documentation for [Deployment](https://blackant.io/tridev/docs/deploy/).

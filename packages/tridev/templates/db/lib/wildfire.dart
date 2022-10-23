@@ -1,11 +1,11 @@
 /// wildfire
 ///
-/// A conduit web server.
+/// A tridev web server.
 library wildfire;
 
 export 'dart:async';
 export 'dart:io';
 
-export 'package:conduit/conduit.dart';
+export 'package:tridev/tridev.dart';
 
 export 'channel.dart';

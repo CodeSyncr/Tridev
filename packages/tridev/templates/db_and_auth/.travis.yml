@@ -5,10 +5,10 @@ addons:
 services:
   - postgresql
 before_script:
-  - psql -c 'create database conduit_test_db;' -U postgres
-  - psql -c 'create user conduit_test_user with createdb;' -U postgres
-  - psql -c "alter user conduit_test_user with password 'conduit!';" -U postgres
-  - psql -c 'grant all on database conduit_test_db to conduit_test_user;' -U postgres
+  - psql -c 'create database tridev_test_db;' -U postgres
+  - psql -c 'create user tridev_test_user with createdb;' -U postgres
+  - psql -c "alter user tridev_test_user with password 'tridev!';" -U postgres
+  - psql -c 'grant all on database tridev_test_db to tridev_test_user;' -U postgres
   - pub get
 script: pub run test -j 1 -r expanded
 branches:
