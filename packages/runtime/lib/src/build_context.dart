@@ -197,24 +197,35 @@ class BuildContext {
         MirrorSystem.getName(classMirror.simpleName), uri);
   }
 
+  Future<FieldDeclaration?> _getField(ClassMirror type, String propertyName) {
+    return getClassDeclarationFromType(type.reflectedType).then((cd) {
+      try {
+        return cd!.members.firstWhere((m) => (m as FieldDeclaration)
+            .fields
+            .variables
+            .any((v) => v.name.value() == propertyName)) as FieldDeclaration;
+      } catch (e) {
+        return null;
+      }
+    });
+  }
+
   Future<List<Annotation>> getAnnotationsFromField(
       Type _type, String propertyName) async {
     var type = reflectClass(_type);
-    var field = (await getClassDeclarationFromType(type.reflectedType))
-        ?.getField(propertyName);
+    FieldDeclaration? field = await _getField(type, propertyName);
     while (field == null) {
       type = type.superclass!;
       if (type.reflectedType == Object) {
         break;
       }
-      field = (await getClassDeclarationFromType(type.reflectedType))
-          ?.getField(propertyName);
+      field = await _getField(type, propertyName);
     }
 
     if (field == null) {
       return [];
     }
 
-    return (field.parent!.parent! as FieldDeclaration).metadata.toList();
+    return field.metadata;
   }
 }

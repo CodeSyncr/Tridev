@@ -5,7 +5,7 @@ repository: https://github.com/tridev-dart/tridev-config.git
 environment: 
   sdk: '>=2.12.0 <3.0.0'
 dependencies: 
-  tridev_runtime: ^1.0.0
+  tridev_runtime: ^1.0.1
   meta: ^1.3.0
   yaml: ^3.1.0
 dev_dependencies: 
