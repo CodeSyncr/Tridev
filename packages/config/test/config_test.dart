@@ -1,90 +1,90 @@
 import 'dart:io';
 
-import 'package:tridev_config/tridev_config.dart';
 import 'package:test/test.dart';
+import 'package:tridev_config/tridev_config.dart';
 
 void main() {
   test("Success case", () {
     const yamlString = "port: 80\n"
         "name: foobar\n"
         "database:\n"
-        "  host: stablekernel.com\n"
-        "  username: bob\n"
-        "  password: fred\n"
+        "  host: localhost\n"
+        "  username: postgres\n"
+        "  password: root\n"
         "  databaseName: dbname\n"
-        "  port: 5000";
+        "  port: 5432";
 
     var t = TopLevelConfiguration.fromString(yamlString);
     expect(t.port, 80);
     expect(t.name, "foobar");
-    expect(t.database.host, "stablekernel.com");
-    expect(t.database.username, "bob");
-    expect(t.database.password, "fred");
+    expect(t.database.host, "localhost");
+    expect(t.database.username, "postgres");
+    expect(t.database.password, "root");
     expect(t.database.databaseName, "dbname");
-    expect(t.database.port, 5000);
+    expect(t.database.port, 5432);
 
     final asMap = {
       "port": 80,
       "name": "foobar",
       "database": {
-        "host": "stablekernel.com",
-        "username": "bob",
-        "password": "fred",
+        "host": "localhost",
+        "username": "postgres",
+        "password": "root",
         "databaseName": "dbname",
-        "port": 5000
+        "port": 5432
       }
     };
     t = TopLevelConfiguration.fromMap(asMap);
     expect(t.port, 80);
     expect(t.name, "foobar");
-    expect(t.database.host, "stablekernel.com");
-    expect(t.database.username, "bob");
-    expect(t.database.password, "fred");
+    expect(t.database.host, "localhost");
+    expect(t.database.username, "postgres");
+    expect(t.database.password, "root");
     expect(t.database.databaseName, "dbname");
-    expect(t.database.port, 5000);
+    expect(t.database.port, 5432);
   });
 
   test("Configuration subclasses success case", () {
     const yamlString = "port: 80\n"
         "extraValue: 2\n"
         "database:\n"
-        "  host: stablekernel.com\n"
-        "  username: bob\n"
-        "  password: fred\n"
+        "  host: localhost\n"
+        "  username: postgres\n"
+        "  password: root\n"
         "  databaseName: dbname\n"
-        "  port: 5000\n"
+        "  port: 5432\n"
         "  extraDatabaseValue: 3";
 
     var t = ConfigurationSubclass.fromString(yamlString);
     expect(t.port, 80);
     expect(t.extraValue, 2);
-    expect(t.database.host, "stablekernel.com");
-    expect(t.database.username, "bob");
-    expect(t.database.password, "fred");
+    expect(t.database.host, "localhost");
+    expect(t.database.username, "postgres");
+    expect(t.database.password, "root");
     expect(t.database.databaseName, "dbname");
-    expect(t.database.port, 5000);
+    expect(t.database.port, 5432);
     expect(t.database.extraDatabaseValue, 3);
 
     final asMap = {
       "port": 80,
       "extraValue": 2,
       "database": {
-        "host": "stablekernel.com",
-        "username": "bob",
-        "password": "fred",
+        "host": "localhost",
+        "username": "postgres",
+        "password": "root",
         "databaseName": "dbname",
-        "port": 5000,
+        "port": 5432,
         "extraDatabaseValue": 3
       }
     };
     t = ConfigurationSubclass.fromMap(asMap);
     expect(t.port, 80);
     expect(t.extraValue, 2);
-    expect(t.database.host, "stablekernel.com");
-    expect(t.database.username, "bob");
-    expect(t.database.password, "fred");
+    expect(t.database.host, "localhost");
+    expect(t.database.username, "postgres");
+    expect(t.database.password, "root");
     expect(t.database.databaseName, "dbname");
-    expect(t.database.port, 5000);
+    expect(t.database.port, 5432);
     expect(t.database.extraDatabaseValue, 3);
   });
 
@@ -94,11 +94,11 @@ void main() {
           "name: foobar\n"
           "extraKey: 2\n"
           "database:\n"
-          "  host: stablekernel.com\n"
-          "  username: bob\n"
-          "  password: fred\n"
+          "  host: localhost\n"
+          "  username: postgres\n"
+          "  password: root\n"
           "  databaseName: dbname\n"
-          "  port: 5000";
+          "  port: 5432";
 
       final _ = TopLevelConfiguration.fromString(yamlString);
       fail('unreachable');
@@ -119,11 +119,11 @@ void main() {
         "name": "foobar",
         "extraKey": 2,
         "database": {
-          "host": "stablekernel.com",
-          "username": "bob",
-          "password": "fred",
+          "host": "localhost",
+          "username": "postgres",
+          "password": "root",
           "databaseName": "dbname",
-          "port": 5000
+          "port": 5432
         }
       };
       final _ = TopLevelConfiguration.fromMap(asMap);
@@ -144,11 +144,11 @@ void main() {
     try {
       const yamlString = "name: foobar\n"
           "database:\n"
-          "  host: stablekernel.com\n"
-          "  username: bob\n"
-          "  password: fred\n"
+          "  host: localhost\n"
+          "  username: postgres\n"
+          "  password: root\n"
           "  databaseName: dbname\n"
-          "  port: 5000";
+          "  port: 5432";
 
       final _ = TopLevelConfiguration.fromString(yamlString);
       fail("Should not succeed");
@@ -167,11 +167,11 @@ void main() {
       final asMap = {
         "name": "foobar",
         "database": {
-          "host": "stablekernel.com",
-          "username": "bob",
-          "password": "fred",
+          "host": "localhost",
+          "username": "postgres",
+          "password": "root",
           "databaseName": "dbname",
-          "port": 5000
+          "port": 5432
         }
       };
       final _ = TopLevelConfiguration.fromMap(asMap);
@@ -250,11 +250,11 @@ void main() {
       const yamlString = "name: foobar\n"
           "extraValue: 2\n"
           "database:\n"
-          "  host: stablekernel.com\n"
-          "  username: bob\n"
-          "  password: fred\n"
+          "  host: localhost\n"
+          "  username: postgres\n"
+          "  password: root\n"
           "  databaseName: dbname\n"
-          "  port: 5000\n"
+          "  port: 5432\n"
           "  extraDatabaseValue: 3";
 
       final _ = ConfigurationSubclass.fromString(yamlString);
@@ -275,11 +275,11 @@ void main() {
         "name": "foobar",
         "extraValue": 2,
         "database": {
-          "host": "stablekernel.com",
-          "username": "bob",
-          "password": "fred",
+          "host": "localhost",
+          "username": "postgres",
+          "password": "root",
           "databaseName": "dbname",
-          "port": 5000,
+          "port": 5432,
           "extraDatabaseValue": 3
         }
       };
@@ -302,11 +302,11 @@ void main() {
       const yamlString = "name: foobar\n"
           "port: 80\n"
           "database:\n"
-          "  host: stablekernel.com\n"
-          "  username: bob\n"
-          "  password: fred\n"
+          "  host: localhost\n"
+          "  username: postgres\n"
+          "  password: root\n"
           "  databaseName: dbname\n"
-          "  port: 5000\n"
+          "  port: 5432\n"
           "  extraDatabaseValue: 3";
 
       final _ = ConfigurationSubclass.fromString(yamlString);
@@ -327,11 +327,11 @@ void main() {
         "name": "foobar",
         "port": 80,
         "database": {
-          "host": "stablekernel.com",
-          "username": "bob",
-          "password": "fred",
+          "host": "localhost",
+          "username": "postgres",
+          "password": "root",
           "databaseName": "dbname",
-          "port": 5000,
+          "port": 5432,
           "extraDatabaseValue": 3
         }
       };
@@ -355,9 +355,9 @@ void main() {
           "name: foobar\n"
           "extraValue: 2\n"
           "database:\n"
-          "  host: stablekernel.com\n"
-          "  username: bob\n"
-          "  password: fred\n"
+          "  host: localhost\n"
+          "  username: postgres\n"
+          "  password: root\n"
           "  databaseName: dbname\n"
           "  extraDatabaseValue: 3";
 
@@ -380,9 +380,9 @@ void main() {
         "name": "foobar",
         "extraValue": 2,
         "database": {
-          "host": "stablekernel.com",
-          "username": "bob",
-          "password": "fred",
+          "host": "localhost",
+          "username": "postgres",
+          "password": "root",
           "databaseName": "dbname",
           "extraDatabaseValue": 3
         }
@@ -407,11 +407,11 @@ void main() {
           "name: foobar\n"
           "extraValue: 2\n"
           "database:\n"
-          "  host: stablekernel.com\n"
-          "  username: bob\n"
-          "  password: fred\n"
+          "  host: localhost\n"
+          "  username: postgres\n"
+          "  password: root\n"
           "  databaseName: dbname\n"
-          "  port: 5000\n";
+          "  port: 5432\n";
 
       final _ = ConfigurationSubclass.fromString(yamlString);
       fail("Should not succeed");
@@ -432,11 +432,11 @@ void main() {
         "name": "foobar",
         "extraValue": 2,
         "database": {
-          "host": "stablekernel.com",
-          "username": "bob",
-          "password": "fred",
+          "host": "localhost",
+          "username": "postgres",
+          "password": "root",
           "databaseName": "dbname",
-          "port": 5000,
+          "port": 5432,
         }
       };
       final _ = ConfigurationSubclass.fromMap(asMap);
@@ -459,10 +459,10 @@ void main() {
           "name: foobar\n"
           "database:\n"
           "  host: not a host.com\n"
-          "  username: bob\n"
-          "  password: fred\n"
+          "  username: postgres\n"
+          "  password: root\n"
           "  databaseName: dbname\n"
-          "  port: 5000\n";
+          "  port: 5432\n";
 
       final _ = ConfigurationSubclassWithValidation.fromString(yamlString);
       fail("Should not succeed");
@@ -482,10 +482,10 @@ void main() {
         "name": "foobar",
         "database": {
           "host": "not a host.com",
-          "username": "bob",
-          "password": "fred",
+          "username": "postgres",
+          "password": "root",
           "databaseName": "dbname",
-          "port": 5000,
+          "port": 5432,
         }
       };
       final _ = ConfigurationSubclassWithValidation.fromMap(asMap);
@@ -504,77 +504,77 @@ void main() {
   test("Optional can be missing", () {
     const yamlString = "port: 80\n"
         "database:\n"
-        "  host: stablekernel.com\n"
-        "  username: bob\n"
-        "  password: fred\n"
+        "  host: localhost\n"
+        "  username: postgres\n"
+        "  password: root\n"
         "  databaseName: dbname\n"
-        "  port: 5000";
+        "  port: 5432";
 
     var t = TopLevelConfiguration.fromString(yamlString);
     expect(t.port, 80);
     expect(t.name, isNull);
-    expect(t.database.host, "stablekernel.com");
-    expect(t.database.username, "bob");
-    expect(t.database.password, "fred");
+    expect(t.database.host, "localhost");
+    expect(t.database.username, "postgres");
+    expect(t.database.password, "root");
     expect(t.database.databaseName, "dbname");
-    expect(t.database.port, 5000);
+    expect(t.database.port, 5432);
 
     final asMap = {
       "port": 80,
       "database": {
-        "host": "stablekernel.com",
-        "username": "bob",
-        "password": "fred",
+        "host": "localhost",
+        "username": "postgres",
+        "password": "root",
         "databaseName": "dbname",
-        "port": 5000
+        "port": 5432
       }
     };
     t = TopLevelConfiguration.fromMap(asMap);
     expect(t.port, 80);
     expect(t.name, isNull);
-    expect(t.database.host, "stablekernel.com");
-    expect(t.database.username, "bob");
-    expect(t.database.password, "fred");
+    expect(t.database.host, "localhost");
+    expect(t.database.username, "postgres");
+    expect(t.database.password, "root");
     expect(t.database.databaseName, "dbname");
-    expect(t.database.port, 5000);
+    expect(t.database.port, 5432);
   });
 
   test("Nested optional can be missing", () {
     const yamlString = "port: 80\n"
         "name: foobar\n"
         "database:\n"
-        "  host: stablekernel.com\n"
-        "  password: fred\n"
+        "  host: localhost\n"
+        "  password: root\n"
         "  databaseName: dbname\n"
-        "  port: 5000";
+        "  port: 5432";
 
     var t = TopLevelConfiguration.fromString(yamlString);
     expect(t.port, 80);
     expect(t.name, "foobar");
-    expect(t.database.host, "stablekernel.com");
+    expect(t.database.host, "localhost");
     expect(t.database.username, isNull);
-    expect(t.database.password, "fred");
+    expect(t.database.password, "root");
     expect(t.database.databaseName, "dbname");
-    expect(t.database.port, 5000);
+    expect(t.database.port, 5432);
 
     final asMap = {
       "port": 80,
       "name": "foobar",
       "database": {
-        "host": "stablekernel.com",
-        "password": "fred",
+        "host": "localhost",
+        "password": "root",
         "databaseName": "dbname",
-        "port": 5000
+        "port": 5432
       }
     };
     t = TopLevelConfiguration.fromMap(asMap);
     expect(t.port, 80);
     expect(t.name, "foobar");
-    expect(t.database.host, "stablekernel.com");
+    expect(t.database.host, "localhost");
     expect(t.database.username, isNull);
-    expect(t.database.password, "fred");
+    expect(t.database.password, "root");
     expect(t.database.databaseName, "dbname");
-    expect(t.database.port, 5000);
+    expect(t.database.port, 5432);
   });
 
   test("Nested required cannot be missing", () {
@@ -582,9 +582,9 @@ void main() {
       const yamlString = "port: 80\n"
           "name: foobar\n"
           "database:\n"
-          "  host: stablekernel.com\n"
-          "  password: fred\n"
-          "  port: 5000";
+          "  host: localhost\n"
+          "  password: root\n"
+          "  port: 5432";
 
       final _ = TopLevelConfiguration.fromString(yamlString);
       fail("Should not succeed");
@@ -603,11 +603,7 @@ void main() {
       final asMap = {
         "port": 80,
         "name": "foobar",
-        "database": {
-          "host": "stablekernel.com",
-          "password": "fred",
-          "port": 5000
-        }
+        "database": {"host": "localhost", "password": "root", "port": 5432}
       };
       final _ = TopLevelConfiguration.fromMap(asMap);
       fail("Should not succeed");
@@ -630,56 +626,56 @@ void main() {
         "databaseRecords:\n"
         "- databaseName: db1\n"
         "  port: 1000\n"
-        "  host: stablekernel.com\n"
-        "- username: bob\n"
+        "  host: localhost\n"
+        "- username: postgres\n"
         "  databaseName: db2\n"
         "  port: 2000\n"
-        "  host: stablekernel.com\n"
+        "  host: localhost\n"
         "integers:\n"
         "  first: 1\n"
         "  second: 2\n"
         "databaseMap:\n"
         "  db1:\n"
-        "    host: stablekernel.com\n"
+        "    host: localhost\n"
         "    databaseName: db1\n"
         "    port: 1000\n"
         "  db2:\n"
-        "    username: bob\n"
+        "    username: postgres\n"
         "    databaseName: db2\n"
         "    port: 2000\n"
-        "    host: stablekernel.com\n";
+        "    host: localhost\n";
 
     final special = SpecialInfo.fromString(yamlString);
     expect(special.strings, ["abcd", "efgh"]);
-    expect(special.databaseRecords.first.host, "stablekernel.com");
+    expect(special.databaseRecords.first.host, "localhost");
     expect(special.databaseRecords.first.databaseName, "db1");
     expect(special.databaseRecords.first.port, 1000);
 
-    expect(special.databaseRecords.last.username, "bob");
+    expect(special.databaseRecords.last.username, "postgres");
     expect(special.databaseRecords.last.databaseName, "db2");
     expect(special.databaseRecords.last.port, 2000);
-    expect(special.databaseRecords.last.host, "stablekernel.com");
+    expect(special.databaseRecords.last.host, "localhost");
 
     expect(special.integers["first"], 1);
     expect(special.integers["second"], 2);
     expect(special.databaseMap["db1"]!.databaseName, "db1");
-    expect(special.databaseMap["db1"]!.host, "stablekernel.com");
+    expect(special.databaseMap["db1"]!.host, "localhost");
     expect(special.databaseMap["db1"]!.port, 1000);
-    expect(special.databaseMap["db2"]!.username, "bob");
+    expect(special.databaseMap["db2"]!.username, "postgres");
     expect(special.databaseMap["db2"]!.databaseName, "db2");
     expect(special.databaseMap["db2"]!.port, 2000);
-    expect(special.databaseMap["db2"]!.host, "stablekernel.com");
+    expect(special.databaseMap["db2"]!.host, "localhost");
   });
 
   test("From file works the same", () {
     const yamlString = "port: 80\n"
         "name: foobar\n"
         "database:\n"
-        "  host: stablekernel.com\n"
-        "  username: bob\n"
-        "  password: fred\n"
+        "  host: localhost\n"
+        "  username: postgres\n"
+        "  password: root\n"
         "  databaseName: dbname\n"
-        "  port: 5000";
+        "  port: 5432";
 
     final file = File("tmp.yaml");
     file.writeAsStringSync(yamlString);
@@ -687,11 +683,11 @@ void main() {
     final t = TopLevelConfiguration.fromFile(File("tmp.yaml"));
     expect(t.port, 80);
     expect(t.name, "foobar");
-    expect(t.database.host, "stablekernel.com");
-    expect(t.database.username, "bob");
-    expect(t.database.password, "fred");
+    expect(t.database.host, "localhost");
+    expect(t.database.username, "postgres");
+    expect(t.database.password, "root");
     expect(t.database.databaseName, "dbname");
-    expect(t.database.port, 5000);
+    expect(t.database.port, 5432);
 
     file.deleteSync();
   });
@@ -855,11 +851,11 @@ void main() {
     const yamlString = "port: foobar\n"
         "name: foobar\n"
         "database:\n"
-        "  host: stablekernel.com\n"
-        "  username: bob\n"
-        "  password: fred\n"
+        "  host: localhost\n"
+        "  username: postgres\n"
+        "  password: root\n"
         "  databaseName: dbname\n"
-        "  port: 5000";
+        "  port: 5432";
 
     try {
       TopLevelConfiguration.fromString(yamlString);
@@ -877,12 +873,12 @@ void main() {
     const yamlString = "port: 1000\n"
         "name: foobar\n"
         "database:\n"
-        "  host: stablekernel.com\n"
+        "  host: localhost\n"
         "  username:\n"
         "    - item\n"
         "  password: password\n"
         "  databaseName: dbname\n"
-        "  port: 5000";
+        "  port: 5432";
 
     try {
       TopLevelConfiguration.fromString(yamlString);
