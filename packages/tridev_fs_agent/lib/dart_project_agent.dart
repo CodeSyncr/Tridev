@@ -5,8 +5,7 @@ import 'dart:io';
 
 import 'package:path/path.dart';
 import 'package:pubspec/pubspec.dart';
-
-import 'working_directory_agent.dart';
+import 'package:tridev_fs_agent/working_directory_agent.dart';
 
 /// A [WorkingDirectoryAgent] with additional behavior for managing a 'Dart package' directory.
 class DartProjectAgent extends WorkingDirectoryAgent {
