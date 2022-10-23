@@ -36,7 +36,7 @@ void main() {
 
   group("RFC6070", () {
     test("Disallow large values of derived key length", () {
-      final sha = sha1;
+      const sha = sha1;
       final hLen = sha.blockSize;
       final gen = PBKDF2(hashAlgorithm: sha);
 
@@ -121,7 +121,7 @@ void main() {
 
   group("Sha256", () {
     test("Disallow large values of derived key length", () {
-      final sha = sha256;
+      const sha = sha256;
       final hLen = sha.blockSize;
       final gen = PBKDF2(hashAlgorithm: sha);
 
